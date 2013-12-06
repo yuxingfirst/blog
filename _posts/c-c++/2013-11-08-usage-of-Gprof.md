@@ -1,7 +1,7 @@
 ---
 title: Gprof使用介绍
 layout: post
-category: [c++]
+category: [c&c++]
 tags: [c++, gprof]
 --- 
 
