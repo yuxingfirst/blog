@@ -1,7 +1,7 @@
 ---
 title: strncpy与strcpy
 layout: post
-category: [c&c++]
+category: [c]
 tags: [c]
 --- 
 

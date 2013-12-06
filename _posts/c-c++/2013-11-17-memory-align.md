@@ -1,7 +1,7 @@
 ---
 title: 内存对齐
 layout: post
-category: [c&c++]
+category: [c]
 tags: [c]
 ---
 
