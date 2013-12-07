@@ -1,8 +1,9 @@
 ---
 title: twemproxy源码分析part1-启动流程
 layout: post
-category: [源码分析]
+categories: [源码分析]
 tags: [redis, twemproxy]
+description: .
 ---
 
 ###twemproxy简介

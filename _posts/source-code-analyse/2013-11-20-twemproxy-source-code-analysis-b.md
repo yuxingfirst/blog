@@ -1,8 +1,9 @@
 ---
 title: twemproxy源码分析part2-freeBSD queue
 layout: post
-category: [源码分析]
+categories: [源码分析]
 tags: [redis, twemproxy]
+description: .
 ---
 
 这篇中我将来介绍twemproxy中队列的应用。  

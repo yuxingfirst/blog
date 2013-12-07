@@ -1,7 +1,7 @@
 ---
 title: tcp选项TCP_DEFER_ACCEPT分析
 layout: post
-category: [linux-network-program]
+categories: [linux网络编程]
 tags: [network]
 ---
 

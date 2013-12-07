@@ -1,8 +1,9 @@
 ---
 title: APUE读书笔记-Chapter8-进程控制
 layout: post
-category: [read-notes]
+categories: [读书笔记]
 tags: [c, unix]
+description: 进程控制.
 ---
 
 ###进程标识符  

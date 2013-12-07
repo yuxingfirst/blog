@@ -1,8 +1,9 @@
 ---
 title: APUE读书笔记-Chapter7-进程环境
 layout: post
-category: [read-notes]
+categories: [读书笔记]
 tags: [c, unix]
+description: 进程环境.
 ---
 
 ###Section7.2-main函数

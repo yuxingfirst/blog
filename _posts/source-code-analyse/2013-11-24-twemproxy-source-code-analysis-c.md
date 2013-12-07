@@ -1,8 +1,9 @@
 ---
 title: twemproxy源码分析part3-mbuf设计
 layout: post
-category: [源码分析]
+categories: [源码分析]
 tags: [redis, twemproxy]
+description: .
 ---
 
 对于网络server来说，主要的职责就是进行网络I/O, 所以buf的设计对于server性能来说是至关重要的。

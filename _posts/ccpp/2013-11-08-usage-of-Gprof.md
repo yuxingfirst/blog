@@ -1,9 +1,10 @@
 ---
-title: Gprof使用介绍
 layout: post
-category: [程序工具]
+title: Gprof使用介绍
+categories: [程序工具]
 tags: [c++, gprof]
---- 
+description: Gprof是一个Unix下的性能分析工具.
+---
 
 根据wikipedia的介绍，Gprof是一个Unix下的性能分析工具，当然也适用于Linux。使用Gprof, 我们可以分析出来我们的程序在所花费的时间以及在程序的执行过程中，函数之间的调用关系。使用Gprof在分析程序的CPU占用时间方面是非常有效的，通过导出的调用图，可以很直观的看出来我们的程序在什么地方花费了比较多的CPU时间，藉此我们便能高效的优化我们的程序。下边我们看看如何使用Gprof。  
 

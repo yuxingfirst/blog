@@ -1,8 +1,9 @@
 ---
 title: 内存对齐
 layout: post
-category: [c]
+categories: [c]
 tags: [c]
+description: 内存对齐介绍.
 ---
 
 ###什么是内存对齐

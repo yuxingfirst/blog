@@ -1,7 +1,7 @@
 ---
 title: TCP连接状态分析
 layout: post
-category: [linux-network-program]
+categories: [linux网络编程]
 tags: [network]
 ---
 

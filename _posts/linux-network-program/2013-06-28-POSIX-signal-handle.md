@@ -1,8 +1,9 @@
 ---
 title: posix信号处理
 layout: post
-category: [linux-network-program]
+categories: [linux网络编程]
 tags: [network]
+description: 信号signal介绍.
 ---
 
 

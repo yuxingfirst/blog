@@ -1,9 +1,10 @@
 ---
 title: strncpy与strcpy
 layout: post
-category: [c]
+categories: [c]
 tags: [c]
---- 
+description: 字符串处理函数strncpy、strcpy介绍.
+---
 
 C语言使用空字符来结束字符串.  
 

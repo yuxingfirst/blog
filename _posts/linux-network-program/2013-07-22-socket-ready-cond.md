@@ -1,7 +1,7 @@
 ---
 title: socket就绪条件
 layout: post
-category: [linux-network-program]
+categories: [linux网络编程]
 tags: [network]
 ---
 
