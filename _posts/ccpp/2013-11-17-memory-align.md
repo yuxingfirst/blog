@@ -103,14 +103,14 @@ short的偏移变为2；接下来是int，有了前边的字节填充后，其�
 
 我们假设内存的读取粒度(memory access granularity)是4  
 
-![img1]({{ site.BASE_PATH }}/_images/linux-kernel/align-1.jpg)
+![img1]({{ site.ORIGIN_PATH }}/_images/linux-kernel/align-1.jpg)
 
 当该数据是从0字节开始时，很CPU只需读取内存一次即可把这4字节的数据完全读取到寄存器中。  
 
 当该数据是从1字节开始时，问题变的有些复杂，此时该int型数据不是位于内存读取边界上，这就
 是一类内存未对齐的数据。  
 
-![img2]({{ site.BASE_PATH }}/_images/linux-kernel/align-2.jpg)
+![img2]({{ site.ORIGIN_PATH }}/_images/linux-kernel/align-2.jpg)
 
 此时CPU先访问一次内存，读取0—3字节的数据进寄存器，并再次读取4—5字节的数据进寄存器，接着
 把0字节和6，7，8字节的数据剔除，最后合并1，2，3，4字节的数据进寄存器。对一个内存未对齐
