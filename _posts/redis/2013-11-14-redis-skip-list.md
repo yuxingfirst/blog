@@ -2,18 +2,18 @@
 title: 解析redis中跳表(skiplist)的运用
 layout: post
 category: [redis]
-tags: [c, redis]
+tags: [c,redis]
 --- 
 
-了解过Redis的都知道，Redis有一个非常有用的数据结构：SortSet，基于它，我们可以很轻松的实现一个Top N的应用。那么，这个SortSet底层到怎么样实现的？怎么样实现才能既保证有序并提供插入，查询的最优时间复杂度呢？这里，便就是我将要给大家介绍的**跳表**
+了解过Redis的都知道，Redis有一个非常有用的数据结构：SortSet，基于它，我们可以很轻松的实现一个Top N的应用。那么，这个SortSet底层到怎么样实现的？怎么样实现才能既保证有序并提供插入，查询的最优时间复杂度呢？这里，便就是我将要给大家介绍的**跳表**  
 
-跳表的具体定义，请参考[wikipedia跳表定义](http://zh.wikipedia.org/zh/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8)，跳表也是链表的一种，只不过它在链表的基础上增加了**跳跃**功能，正是这个跳跃的功能，使得在查找元素时，跳表能够提供O(log n)的时间复杂度。（通常，像红黑树等这样的数据结构查找的时间复杂度也是O(log n)，但是**正确**实现一颗红黑树是比正确实现一个跳表是要复杂很多很多的）
+跳表的具体定义，请参考[wikipedia跳表定义](http://zh.wikipedia.org/zh/%E8%B7%B3%E8%B7%83%E5%88%97%E8%A1%A8)，跳表也是链表的一种，只不过它在链表的基础上增加了**跳跃**功能，正是这个跳跃的功能，使得在查找元素时，跳表能够提供O(log n)的时间复杂度。（通常，像红黑树等这样的数据结构查找的时间复杂度也是O(log n)，但是**正确**实现一颗红黑树是比正确实现一个跳表是要复杂很多很多的）  
 
-> **跳跃**
+> **跳跃**  
 
-那么，这个**跳跃**的功能是怎么实现的呢？为什么能够提供跟查找树一样的O(log n)的时间复杂度呢？下边我将借助Redis中的代码来分析这些原理。（redis的完整代码，参看 [redis](https://github.com/antirez/redis)）
+那么，这个**跳跃**的功能是怎么实现的呢？为什么能够提供跟查找树一样的O(log n)的时间复杂度呢？下边我将借助Redis中的代码来分析这些原理。（redis的完整代码，参看 [redis](https://github.com/antirez/redis)）  
 
-redis代码中，跳表主要实现在 [t_zset.c](https://github.com/antirez/redis/blob/unstable/src/t_zset.c)，跳表节点的定义，则在[redis.h](https://github.com/antirez/redis/blob/unstable/src/redis.h)中，我们首先来看跳表节点的定义：  
+redis代码中，跳表主要实现在 [t_zset.c](https://github.com/antirez/redis/blob/unstable/src/t_zset.c)，跳表节点的定义，则在[redis.h](https://github.com/antirez/redis/blob/unstable/src/redis.h)中，我们首先来看跳表节点的定义：    
 
     typedef struct zskiplistNode {
         robj *obj;
@@ -23,11 +23,11 @@ redis代码中，跳表主要实现在 [t_zset.c](https://github.com/antirez/red
             struct zskiplistNode *forward;
             unsigned int span;
         } level[];
-    } zskiplistNode;  
+    } zskiplistNode;    
 
-暂时先不关心robj *obj和unsigned int span这两个属性，robj是redis内部对象的定义， span是redis内部在计算节点的排名使用的。  
+暂时先不关心robj *obj和unsigned int span这两个属性，robj是redis内部对象的定义， span是redis内部在计算节点的排名使用的。    
 
-在定义普通链表节点的时候（双向链表）
+在定义普通链表节点的时候（双向链表）  
 
     struct ListNode 
     {
@@ -35,18 +35,19 @@ redis代码中，跳表主要实现在 [t_zset.c](https://github.com/antirez/red
         ListNode *prev;
         ListNode *next;
     };  
-prev为前向指针，next为后向指针。  
-那么我们再来看redis中跳表节点的前向节点指针的定义，
+prev为前向指针，next为后向指针。    
+那么我们再来看redis中跳表节点的前向节点指针的定义，  
 
     struct zskiplistNode *backward;  
 
 backward指针表示其也是一个双向链表，指向某个节点前向节点，这点跟普通链表的prev指针的含义是一样的。  
-再看后向节点指针的定义：  
+再看后向节点指针的定义：    
 
     struct zskiplistLevel {
             struct zskiplistNode *forward;
             unsigned int span;
-    } level[];  
+    } level[];    
+    
 很奇怪是不是？后向节点指针变成了一个数组，这正是跳表可以实现**跳跃**的实质，这个数组中的forward元素不仅可以指向这个节点的直接后继元素，也可以指向后继元素的后继元素，或者是后继后继后继元素，依此类推。这也就是说，从当前的这个节点，可以以O(1)的时间复杂度跨过其直接后继节点查找其后的某个节点，这样就实现了跳跃。（普通链表需要查找某个节点的话，必须要进行遍历操作，这对于有查询性能要求的应用场景来说，是不能接受的！）
 
 > **O(log n)**  
