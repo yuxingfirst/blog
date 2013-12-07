@@ -5,15 +5,15 @@ paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 pygments: true
 
-title: dbyll
-description: Stylish Jekyll Theme
+title: codeworm
+description: a coderworm's footprint 
 author:
-  name: dbyll
-  email: dbyll@ismaildemirbilek.com
-  github: dbtek
-  twitter: asd123
-  pinterest: asd123
-  linkedin: asd123
+  name: yuxing 
+  email: yuxingfirst@gmail.com 
+  github: yuxingfirst 
+  twitter: 
+  pinterest: 
+  linkedin: 
   bio: Your stylish, minimalist theme!
   email_md5: 726351295ec82e145928582f595aa3aa
 
