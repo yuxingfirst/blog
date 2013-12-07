@@ -27,7 +27,7 @@ BASE_PATH: http://yuxingfirst.github.io/blog
 # Links in your website should always be prefixed with {{ site.BASE_PATH }}
 # Do not put a "/" at the end of the url.
 #
-# CNAME (http://yourcustomdomain.com)
+CNAME (http://coderworm.com)
 #   DO NOT SET BASE_PATH JUST LEAVE IT BLANK 
 #   (urls will be prefixed with "/" and work relatively)
 #
