@@ -3,6 +3,7 @@ title: 深入分析tcp close与shutdown
 layout: post
 categories: [linux网络编程]
 tags: [network]
+description: tcp半关闭套接字.
 ---
 
 ###关闭socket-close
