@@ -16,7 +16,7 @@ tags: [network]
 
  这种交换至少需要三个分组，因此称之为TCP的三路握手,如下图：  
 
-![img1](https://raw.github.com/yuxingfirst/yuxingfirst.github.io/master/_images/linux-network-program/tcp-sanluweoshou.jpg)  
+![img1](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/tcp-sanluweoshou.jpg)  
 
 ###TCP四路挥手  
 TCP建立一个连接需要3个分节，而终止一个连接一般需要4个分节，所以一般也称为四路挥手。  
@@ -31,14 +31,16 @@ TCP建立一个连接需要3个分节，而终止一个连接一般需要4个分
 
  如图展示的这些分组：  
 
-![img2](https://raw.github.com/yuxingfirst/yuxingfirst.github.io/master/_images/linux-network-program/tcp-sicihuishou.png)  
+![img2](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/tcp-sicihuishou.png)  
 
 ###TCP连接发起和终止时套接字的状态
 
 tcp为一个连接定义了11中状态，并且tcp规定如何基于当前状态及在该状态下所接收的分节从一个状态转换到另一个状态。下边我们通过图3来展示tcp连接的分组交换情况及tcp套接字的状态：  
 
-![img3](https://raw.github.com/yuxingfirst/yuxingfirst.github.io/master/_images/linux-network-program/tcp-zhuangtai.gif)
+![img3](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/tcp-zhuangtai.gif)
 
  一旦建立一个连接，客户就构造一个请求并发送给服务器。服务器处理该请求并发送一个应答，需要注意的是，服务器对客户请求的确认是伴随器应答发送的。这种做法称为捎带(piggybacking)，它通常在服务器处理请求并产生应答的时间少于200ms时发生。如果服务器耗用更长时间，如1s，那么我们将看到先是确认后是应答。  
 
 接下来展示了终止tcp连接时交换的4个分节，从图中我们可以看到，发送一个单分节请求和接受一个单分节的应答，使用tcp至少需要8个分节的开销；如果改用udp，那么只需要交换两个分组：一个承载请求，一个承载应答。不过从tcp切换到udp也失去了tcp提供给应用进程的全部可靠性，迫使应用进程来做可靠性处理。  
+
+-EOF-

@@ -61,13 +61,13 @@ tags: [network]
 
 为了便于查看套接字的状态，我们在第一次给server发送完数据后休眠3秒；shutdown后（即client端的tcp发送完fin）同样也休眠3秒。运行程序后，我们查看到套接字的各个状态如下所示:
 
-![img1](https://raw.github.com/yuxingfirst/yuxingfirst.github.io/master/_images/linux-network-program/half-close-1.png)
+![img1](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/half-close-1.png)
 图1
 
-![img2](https://raw.github.com/yuxingfirst/yuxingfirst.github.io/master/_images/linux-network-program/half-close-2.png)
+![img2](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/half-close-2.png)
 图2
 
-![img3](https://raw.github.com/yuxingfirst/yuxingfirst.github.io/master/_images/linux-network-program/half-close-3.png)
+![img3](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/half-close-3.png)
 图3
 
 根据上边几个截图我们可以看出，调用shutdown(fd, SHUT_WR)后，client会给server端发送一个fin，这时的套接字状态如图2，最后server在调用close关闭套接字后，套接字状态图变为图3.

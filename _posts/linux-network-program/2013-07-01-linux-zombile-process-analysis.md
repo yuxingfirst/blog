@@ -26,7 +26,7 @@ description: 僵尸进程.
 
 如果子进程先于父进程退出， 同时父进程又没有调用wait/waitpid，则该子进程将成为僵尸进程。通过ps命令，我们可以看到该进程的状态为Z(表示僵死)，如图1所示：  
 
-![img1](https://raw.github.com/yuxingfirst/yuxingfirst.github.io/master/_images/linux-network-program/jiangshi-1.png)  
+![img1](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/jiangshi-1.png)  
 
 > 备注: 有些unix系统在ps命令输出的COMMAND栏以defunct指明僵尸进程。  
 
@@ -69,16 +69,16 @@ description: 僵尸进程.
 
 我们假设有一个client/server的程序，对于每一个连接过来的client，server都启动一个新的进程去处理来自这个client的请求。然后我们有一个client进程，在这个进程内，发起了多个到server的请求（假设5个），则server会fork 5个子进程来读取client输入并处理（同时，当客户端关闭套接字的时候，每个子进程都退出）；当我们终止这个client进程的时候 ，内核将自动关闭所有由这个client进程打开的套接字，那么由这个client进程发起的5个连接基本在同一时刻终止。这就引发了5个FIN，每个连接一个。server端接受到这5个FIN的时候，5个子进程基本在同一时刻终止。这就又导致差不多在同一时刻递交5个SIGCHLD信号给父进程，如图2所示：  
 
-![img2](https://raw.github.com/yuxingfirst/yuxingfirst.github.io/master/_images/linux-network-program/jiangshi-2.png)  
+![img2](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/jiangshi-2.png)  
 
 正是这种同一信号多个实例的递交造成了我们即将查看的问题。  
 我们首先运行服务器程序，然后运行客户端程序，运用ps命令看以看到服务器fork了5个子进程，如图3：
 
-![img3](https://raw.github.com/yuxingfirst/yuxingfirst.github.io/master/_images/linux-network-program/jiangshi-3.jpg)  
+![img3](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/jiangshi-3.jpg)  
 
 然后我们Ctrl+C终止客户端进程，在我机器上边测试，可以看到信号处理函数运行了3次，还剩下2个僵尸进程，如图4：  
 
-![img4](https://raw.github.com/yuxingfirst/yuxingfirst.github.io/master/_images/linux-network-program/jiangshi-4.jpg)  
+![img4](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/jiangshi-4.jpg)  
 
 
 通过上边这个实验我们可以看出，建立信号处理函数并在其中调用wait并不足以防止出现僵尸进程，其原因在于：所有5个信号都在信号处理函数执行之前产生，而信号处理函数只执行一次，因为Unix信号一般是不排队的(我的这篇博客中有提到http://www.cnblogs.com/yuxingfirst/p/3160697.html)。 更为严重的是，本问题是不确定的，依赖于客户FIN到达服务器主机的时机，信号处理函数执行的次数并不确定。
@@ -253,3 +253,4 @@ description: 僵尸进程.
 	    exit(0);
 	}
     
+-EOF-
