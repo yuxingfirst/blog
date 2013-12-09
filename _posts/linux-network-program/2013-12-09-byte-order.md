@@ -9,7 +9,7 @@ description: Byte Order
 字节序是一种处理器架构的特性，在表示大的数据类型时用于指示字节是如何排序的，比如整型数(integer)。  
 可以看一下一个32位整数的字节是如何排序的：  
 
-![img1][1]  
+![img1](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/byte-order-1.gif)  
 
 如上图所示，展示了两种字节排序的方式：  
 
@@ -28,7 +28,7 @@ cp[0]包含4，引用了最高有效字节；cp[3]包含1，引用了最低有�
 
 下图是一些平台支持的字节序列：   
 
-![img2][2]
+![img2](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/byte-order-platforms.png)
 
 我字节及其上边的测试结果:
 	
@@ -70,7 +70,5 @@ s代表短(short)整型。
 
 -EOF-
 
-1: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/byte-order-1.gif  
-2: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/byte-order-platforms.png  
 
 
