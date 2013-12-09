@@ -70,7 +70,7 @@ s代表短(short)整型。
 
 -EOF-
 
-1. https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/byte-order-1.gif  
-2. https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/byte-order-platforms.png  
+1: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/byte-order-1.gif  
+2: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/byte-order-platforms.png  
 
 
