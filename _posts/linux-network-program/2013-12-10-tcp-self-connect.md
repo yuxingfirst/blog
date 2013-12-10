@@ -1,5 +1,5 @@
 ---
-title: TCPself-connects
+title: TCP self-connects
 layout: post
 categories: [ÍøÂç±à³Ì]
 tags: [network]
