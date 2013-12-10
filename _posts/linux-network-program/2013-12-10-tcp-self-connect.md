@@ -46,8 +46,8 @@ Local Address和Foreign Address竟然都是一样的。不过后来由于一些�
 
 -EOF-
 
-[self_connect_telnet]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/self-connects-telnet.png "self-connect telnet test"  
-[self_connect_netstat]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/self-connects-netstat.png "self-connect netstat"  
+[self_connect_telnet]: /_images/linux-network-program/self-connects-telnet.png "self-connect telnet test"  
+[self_connect_netstat]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/self-connects-netstat.png "self-connect netstat"  
 
 [1]: http://lkml.indiana.edu/hypermail/linux/kernel/9909.3/0510.html "linux kernel mail list"  
 [2]: http://lkml.indiana.edu/hypermail/linux/kernel/9909.3/0510.html
