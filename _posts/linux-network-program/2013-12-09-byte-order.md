@@ -30,7 +30,7 @@ cp[0]包含4，引用了最高有效字节；cp[3]包含1，引用了最低有�
 
 ![img2](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/byte-order-platforms.png)
 
-我自己及其上边的测试结果:
+我自己机器上边的测试结果:
 	
 	#include <stdio.h>
 
