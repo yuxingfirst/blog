@@ -1,7 +1,7 @@
 ---
 title: 字节序
 layout: post
-categories: [linux网络编程]
+categories: [网络编程]
 tags: [network]
 description: Byte Order
 ---

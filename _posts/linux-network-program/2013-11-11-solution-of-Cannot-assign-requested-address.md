@@ -1,7 +1,7 @@
 ---
 title: can-not-assign-requested-address出现的原因及解决方案
 layout: post
-categories: [linux网络编程]
+categories: [网络编程]
 tags: [network]
 ---
 

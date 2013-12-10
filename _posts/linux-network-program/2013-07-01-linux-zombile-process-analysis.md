@@ -1,7 +1,7 @@
 ---
 title: linux僵尸进程产生的原因及如何避免产生僵尸进程
 layout: post
-categories: [linux网络编程]
+categories: [网络编程]
 tags: [network]
 description: 僵尸进程.
 ---

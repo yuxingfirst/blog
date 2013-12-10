@@ -1,7 +1,7 @@
 ---
 title: socket超时设置
 layout: post
-categories: [linux网络编程]
+categories: [网络编程]
 tags: [network]
 --- 
 
