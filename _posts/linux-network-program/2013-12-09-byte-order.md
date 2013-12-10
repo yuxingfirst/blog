@@ -71,6 +71,8 @@ cp[0]包含4，引用了最高有效字节；cp[3]包含1，引用了最低有�
 在上边这些函数中，h代表主机(host)字节序，n代表网络(network)字节序；l代表长(long)整数。  
 s代表短(short)整型。  
 
+关于gdb如何查看内存内容参考这篇文章:[gdb查看内存](http://coderworm.com//c/2013/09/28/gdb.html)
+
 -EOF-
 
 
