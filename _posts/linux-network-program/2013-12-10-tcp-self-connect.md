@@ -1,7 +1,7 @@
 ---
-title: [TCP self-connects]
+title: TCP self-connects
 layout: post
-categories: [网络编程]
+categories: [缃戠粶缂栫▼]
 tags: [network]
-description: 自连接的tcp连接
+description: 鑷繛鎺ョ殑tcp杩炴帴.
 ---
