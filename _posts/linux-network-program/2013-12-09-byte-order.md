@@ -30,27 +30,30 @@ cp[0]包含4，引用了最高有效字节；cp[3]包含1，引用了最低有�
 
 ![img2](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/byte-order-platforms.png)
 
-我字节及其上边的测试结果:
+我自己及其上边的测试结果:
 	
 	#include <stdio.h>
 
 	int main(void) {
 		int a = 0x04030201;
 		char *cp = (char*)&a;
-		printf("%c\n", *(char*)cp);
-		printf("%c\n", *(char*)(cp+3));
 		return 0;
 	}  
 
-	xiongj@dev:unp$ ./byteorder 
-	
-		
+要查看自己的机器是哪种字节序，我们可以借助gdb查看上边这段程序中变量a的二进制内容：  
 
-由输出结果我们可以看到是大端字节序。  
+	$ gdb -g -o byteorder byteorder.c
+	$ gdb byteorder
+	(gdb) x/t cp
+	(gdb) 000001000000001100000010000000001  
+
+结合上边的介绍和上述输出结果，我们可以看到我机器是大端字节序。因为cp[0]和cp[3] (int为4个字节)的内容分别是:
+	
+	cp[0]=00000100=4  
+  	cp[3]=00000001=1
 
 通常，网络协议会指定自己的字节序，比如TCP/IP协议一般按大端字节序。这种情求下，就有可能跟cpu
-使用的字节序不一样。所以，在网络编程中，系统为我们提供了一组api用于在网络字节序和主机字节序之间
-相互转换:  
+使用的字节序不一样。所以，在网络编程中，系统为我们提供了一组api用于在网络字节序和主机字节序之间相互转换:  
 
 	#include <arpa/inet.h>
 	uint32_t htonl(uint32_t hostint32);
