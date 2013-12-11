@@ -40,9 +40,38 @@ Local Address和Foreign Address竟然都是一样的。不过后来由于一些�
 
 ![img1][self_connect_telnet]
 
-![img2][self_connect_netstat]
+![img2][self_connect_netstat]  
 
-//todo...
+看到这里，我们可能会感到非常奇怪?怎么会自己连接自己并且还能成功建立连接呢?  
+
+通过google，我发现这个问题在linux kernel maillist有过讨论:[tcp/ip bug (2.2.12) or telnet client bug][4]，其中Craig Milo Rogers做出了一些[解答][5]。  
+
+为了彻底搞清楚这个问题出现的原因，首先，我们先来看看linux内核的端口分配规则。 
+
+我们知道，一个tcp连接由四个元组唯一标识，分别是：  
+	
+	(source IP, source port, destination IP, destination port)  
+
+所以，当一个client(如上边所述的telnet程序)创建一个套接字(socket)并且尝试连接到一个server的时候，source IP, destination IP, destination port，这三个参数已经是确定了的。唯一没有确定的就是source port， 因为一般情况下，我们在写客户端程序连接服务器的时候，一般这样做:
+
+	int fd = socket(...);
+	connect(fd, ...);  
+
+当然，我们也可以在调用connect之前，调用bind(2)给这个套接字绑定一个端口(source port)，当通常很少这样做。在这种情况下，给这个套接字绑定source port的工作，就交给内核去做了。内核通常会从一个叫做Ephemeral port的范围内，循环地选择一个端口分配给这个套接字。  
+
+那么，什么叫做Ephemeral port呢? 我们看wikipedia的解释, [Ephemeral port][6]:  
+
+	An ephemeral port is a short-lived transport protocol port for 
+	Internet Protocol (IP) communications allocated automatically from a predefined 
+	range by the IP software.
+
+其实，Ephemeral port就是一种在IP连接中的一种短暂生命期的端口，可以在一个预先定义的范围内自动分配。对应到linux系统中，我们可以使用下述命令，查看我们机器中的ephemeral ports的范围:  
+
+	$ cat /proc/sys/net/ipv4/ip_local_port_range  
+	1024	65000  
+
+在我自己的机器上，ephemeral ports的范围是：1024至65000 
+
 
 -EOF-
 
@@ -51,4 +80,7 @@ Local Address和Foreign Address竟然都是一样的。不过后来由于一些�
 
 [1]: http://lkml.indiana.edu/hypermail/linux/kernel/9909.3/0510.html "linux kernel mail list"  
 [2]: http://lkml.indiana.edu/hypermail/linux/kernel/9909.3/0510.html
-[3]: http://en.wikipedia.org/wiki/Postel%27s_law "Robustness principle's wikipedia"
+[3]: http://en.wikipedia.org/wiki/Postel%27s_law "Robustness principle's wikipedia"  
+[4]: http://lkml.indiana.edu/hypermail/linux/kernel/9909.3/0438.html  
+[5]: http://lkml.indiana.edu/hypermail/linux/kernel/9909.3/0510.html  
+[6]: http://en.wikipedia.org/wiki/Ephemeral_port "Ephemeral port"
