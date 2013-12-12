@@ -17,7 +17,7 @@ Local Address和Foreign Address竟然都是一样的。不过后来由于一些�
 
 恰好今天在一篇帖子上有提到 Linux Tcp Self-connection， 这里就对这个问题做点研究。  
 
-首先考虑下如何重现。像上段介绍的情况，其实就相当于一直连接一个并没有被监听的端口，所以我们可以这样:  
+首先考虑下如何重现。根据上边介绍的情况，其实就相当于一直连接一个并没有被监听的端口，所以我们可以这样:  
 	
 	//self_connect.sh
 	#!/bin/bash
@@ -74,7 +74,7 @@ Local Address和Foreign Address竟然都是一样的。不过后来由于一些�
 
 在我自己的机器上，ephemeral ports的范围是：32768至61000。   
 
-再回到我们telnet的例子，当我们运行脚本后,telnet启动，内核在指定的ephemeral ports范围内，选择一个端口作为source port,然后在尝试连接我们指定的：127.0.0.1 50000， 由于并没有进程在50000端口在监听，所以tcp会回复一个RST分节，同时telnet收到这个分节并提示:Connection refused。  
+再回到我们telnet的例子，当我们运行脚本后,telnet启动，内核在指定的ephemeral ports范围内，选择一个端口作为source port,然后就尝试连接我们指定的：127.0.0.1 50000， 由于并没有进程在50000端口在监听，所以tcp会回复一个RST分节，同时telnet收到这个分节并提示:Connection refused。  
 
 我们可以用tcpdump查看这一过程:  
 
@@ -100,12 +100,118 @@ Local Address和Foreign Address竟然都是一样的。不过后来由于一些�
 
 ![img4][tcp-stat]  
 
-首先当源端口被选择为50000时，tcp立即初始化为CLOSED状态；然后，telnet常识连接127.0.0.1:50000这个server，这里意味着tcp协议栈会开始三路握手过程，发送一个SYN分节，此时源端口进入:SYN SENT 状态；由于这里目的端口与源端口相同，所以，先前发出的那个SYN分节会在50000这个端口上被接收到，此时这个端口的tcp状态转换为:SYN RECEIVED,同时呢，它会发送一个SYN+ACK；同样的，这个SYN+ACK同样会在50000这个端口被接受到；为了是tcp进入ESTABLISHED状态，还需要最后一个ACK。看到这里，有两个问题需要解决:
+首先当源端口被选择为50000时，tcp立即初始化为CLOSED状态；然后，telnet尝试连接 127.0.0.1:50000这个server，这里意味着tcp协议栈会开始三路握手过程，发送一个SYN分节，此时源端口进入:SYN_SENT 状态；由于这里目的端口与源端口相同，所以，先前发出的那个SYN分节会在50000这个端口上被接收到，此时这个端口的tcp状态转换为:SYN RECEIVED,同时呢，它会发送一个SYN+ACK；同样的，这个SYN+ACK同样会在50000这个端口被接收到；为了使tcp进入ESTABLISHED状态，还需要最后一个ACK。看到这里，有两个问题需要解决:
 
 1. 为什么在一个没有被监听的端口上接到SYN，不发送RST，而是发送SYN+ACK?  
 2. tcp状态是如何转变成为ESTABLISHED以及最后那个ACK是什么时候发送的来完成三路握手的呢?  
 
-//未完待续...
+下边，我将从[RFC793](http://www.ietf.org/rfc/rfc793.txt "RFC793")和linux内核源码[tcp_input.c](https://github.com/yuxingfirst/linux/blob/master/net/ipv4/tcp_input.c)这两个方面来分析这两个问题。
+
+###RFC793
+---------
+
+我们知道正常的client -> server需要经过三次握手(three-way handshake),如下所示:
+
+	 TCP A                                                TCP B
+
+  	1.  CLOSED                                               LISTEN
+
+  	2.  SYN-SENT    --> <SEQ=100><CTL=SYN>               --> SYN-RECEIVED
+
+ 	3.  ESTABLISHED <-- <SEQ=300><ACK=101><CTL=SYN,ACK>  <-- SYN-RECEIVED
+
+  	4.  ESTABLISHED --> <SEQ=101><ACK=301><CTL=ACK>       --> ESTABLISHED
+
+  	5.  ESTABLISHED --> <SEQ=101><ACK=301><CTL=ACK><DATA> --> ESTABLISHED 
+
+TCP A为客户端，TCP B为服务器端，TCP A对正在监听的TCP B发起连接请求。  
+
+除了这种经典的连接交互之外，tcp(Transmission Control Protocol)还提供了另外一个特性:  
+	
+	simultaneous open  
+
+那么什么是"simultaneous open"呢? 其实就是假设在tcp连接中存在这样一种情况:  
+	
+> 相互独立的两台主机的两个tcp 套接字, 可能会在同一时刻向对方发起连接。在这种情况下，就跟我上边说的经典连接模型不一样了。  
+
+我们来看下RFC793中对这一情况的描述:  
+
+	Simultaneous initiation is only slightly more complex, as is shown in
+	figure 8.  Each TCP cycles from CLOSED to SYN-SENT to SYN-RECEIVED to
+	ESTABLISHED.
+
+      TCP A                                            TCP B
+
+	  1.  CLOSED                                           CLOSED
+	
+	  2.  SYN-SENT     --> <SEQ=100><CTL=SYN>              ...
+	
+	  3.  SYN-RECEIVED <-- <SEQ=300><CTL=SYN>              <-- SYN-SENT
+	
+	  4.               ... <SEQ=100><CTL=SYN>              --> SYN-RECEIVED
+	
+	  5.  SYN-RECEIVED --> <SEQ=100><ACK=301><CTL=SYN,ACK> ...
+	
+	  6.  ESTABLISHED  <-- <SEQ=300><ACK=101><CTL=SYN,ACK> <-- SYN-RECEIVED
+	
+	  7.               ... <SEQ=101><ACK=301><CTL=ACK>     --> ESTABLISHED
+
+                Simultaneous Connection Synchronization
+
+TCP A和TCP B同时发送SYN，两者同时进入SYN-SENT状态，然后又分别收到了对方的SYN于是又进入SYN-RECEIVE，随后，又立即发送了SYN+ACK，最后两者都接收到ACK于是进入ESTABLISHED状态。我们的例子是destination port 和 source port是同一个端口，跟上边的这种情况有点差别，不过也同样可以适用。  
+
+###linux内核 net/ipv4/tcp_input.c
+--------------------  
+	
+	 5681: static int tcp_rcv_synsent_state_process()
+
+	 5861: if (th->syn) {
+     5862:        /* We see SYN without ACK. It is attempt of
+     5863:         * simultaneous connect with crossed SYNs.
+     5864:         * Particularly, it can be connect to self.
+     5865:        */
+     5866:        tcp_set_state(sk, TCP_SYN_RECV);
+	
+				  //...
+	 5893: 		  tcp_send_synack(sk);
+
+请看上边这个代码片段, 从函数名可以得知，这个函数是在tcp state转换为SYN-SENT后执行的。前边有提到过，tcp state在发送完SYN后进入SYN-SENT；然后，当程序执行到5861这行代码时，它看到了一个syn, 于是在5866这行将tcp state设置为TCP_SYN_RECV。然后，在5893行处发送SYN+ACK。  
+
+> 此外，从代码的注释我们可以看到，此处接受到的是一个没有ACK的SYN，说明不是来自server的回射，它这里认为是simultaneous connect中的交叉SYN。然后，注释中还特别提到，这里有可能是self-connect。  
+
+然后，发送出去的SYN+ACK将回送回来并且在tcp_rcv_state_process这个函数中进行处理:  
+
+	5931: int tcp_rcv_state_process()	
+
+	5991: if (!tcp_validate_incoming(sk, skb, th, 0))
+    5992:           return 0;
+	5993: 
+    5994: /* step 5: check the ACK field */
+    5995: if (th->ack) {
+    5996:         int acceptable = tcp_ack(sk, skb, FLAG_SLOWPATH) > 0;
+	5997: 
+    5998:         switch (sk->sk_state) {
+    5999:         case TCP_SYN_RECV:
+    6000:               if (acceptable) {
+    6001:                       tp->copied_seq = tp->rcv_nxt;
+    6002:                       smp_mb();
+    6003:                       tcp_set_state(sk, TCP_ESTABLISHED);
+
+在tcp_validate_incoming做一些检验，然后会发送最后一个ack。随后，在第6003行，将tcp sate设置为ESTABLISHED。
+
+好了，通过上边的分析，我们大致明白了self-connect产生的原因；同时我们也知道了要产生这种现象，需要一些前提条件:  
+
+1. 我们的client程序连接的端口需要在ephemeral ports的范围内。即/proc/sys/net/ipv4/ip_local_port_range这个文件配置的端口范围。  
+2. client和server需要在同一台主机。  
+
+所以为了避免这个问题，我们在给我们的一些server程序选择端口的时候，尽量不要用处于ephemeral ports范围内的端口；否则，一旦出现这种情况，就有可能很难定位了。  
+
+参考资料:  
+
+1. [net/ipv4/tcp_input.c](https://github.com/yuxingfirst/linux/blob/master/net/ipv4/tcp_input.c "tcp_input.c")  
+2. [Ephemeral_port wikipedia](http://en.wikipedia.org/wiki/Ephemeral_port "Ephemeral_port")  
+3. [TCP client self connect...](http://sgros.blogspot.com/2013/08/tcp-client-self-connect.html "self connect")  
+4. [RFC793](http://www.ietf.org/rfc/rfc793.txt "RFC793")
 
 -EOF-
 
