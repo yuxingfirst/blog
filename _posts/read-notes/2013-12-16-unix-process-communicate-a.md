@@ -42,6 +42,96 @@ pipes是在所有unix系统中均被支持的最老的进程通信方式。同�
 
 我们知道, 当我们fork一个子线程的时候，父子进程的运行顺序是不确定的。这里，我们通过管道来实现父、子进程同步的例子:  
 
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <unistd.h>
+	#include <errno.h>
+
+	static int pfd1[2], pfd2[2];
+
+	void TELL_WAIT() 
+	{
+		    if(pipe(pfd1) < 0 || pipe(pfd2) < 0) {
+		            printf("TELL_WAIT errno:%d\n", errno);
+		            exit(0);
+		    }
+	}
+
+	void TELL_PARENT(pid_t pid) 
+	{
+		    if(write(pfd2[1], "c", 1) != 1) {
+		            printf("TELL_PARENT errno:%d\n", errno);
+		    }
+	}
+
+	void WAIT_PARENT(void)
+	{
+		    char c;
+		    if(read(pfd1[0], &c, 1) != 1) {		//阻塞
+		            printf("WAIT_PARENT errno:%d\n", errno);
+		    }
+
+		    if(c != 'p') {
+		            printf("WAIT_PARENT incorrect data\n");
+		            exit(0);
+		    }
+	}
+
+	void TELL_CHILD(pid_t pid) 
+	{
+		    if(write(pfd1[1], "p", 1) != 1) {	
+		            printf("TELL_CHILD errno:%d\n", errno);
+		    }   
+	}
+
+	void WAIT_CHILD(void) 
+	{
+		    char c;
+		    if(read(pfd2[0], &c, 1) != 1) {		//阻塞
+		            printf("WAIT_CHILD errno:%d\n", errno);
+		    }
+
+		    if(c != 'c') 
+		    {
+		            printf("WAIT_CHILD incorrect data\n");
+		            exit(0);
+		    }
+	}
+
+	static void charatatime(char *str);
+
+	int main(void) 
+	{
+		pid_t pid; 
+		TELL_WAIT();
+
+		if((pid = fork()) < 0) {
+		    exit(0); 
+		} else if(pid == 0) {   //child
+		    //WAIT_PARENT(); 
+		    charatatime("output from child\n");
+		    TELL_PARENT(pid);
+		} else {                //parent
+		    WAIT_CHILD();
+		    charatatime("output from parent\n");
+		    //TELL_CHILD(pid);
+		}
+		return 0;
+	}
+
+	static void charatatime(char *str) {
+		char *ptr;
+		int c;
+		setbuf(stdout, NULL);
+		for(ptr = str; (c = *ptr++) != 0;) {
+		    putc(c, stdout); 
+		}
+	}
+
+通过上边的代码就可以控制父子进程的运行顺序。因为在WAIT_XXX函数中调用read会发生阻塞，直到某个进程在相应管道中写入数据。  
+
+不过，有一点需要注意的是，每一个管道都会有一个额外的读取进程，也就是说，子进程从pfd[0]读取，父进程上也这个管道的读端,不过由于父进程并没有执行对该管道的读操作，所以不会有任何影响。不过，比较好的做法是在父子进程中关闭相应的管道的某一端。  
+比如，如果父进程在pfd1[0]这端读，子进程在pfd1[1]写，那么就要父进程中关闭pfd1[1]，子进程中关闭pfd1[0]; 
 
 [half-duplex]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/read-notes/half-duplex.png  
 [pipe-after-fork]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/read-notes/pipe-after-fork.png  
