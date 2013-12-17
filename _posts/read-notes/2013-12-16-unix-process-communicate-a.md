@@ -43,6 +43,10 @@ pipes是在所有unix系统中均被支持的最老的进程通信方式。同�
 我们知道, 当我们fork一个子线程的时候，父子进程的运行顺序是不确定的。这里，我们通过管道来实现父、子进程同步的例子:  
 
 
+[hafl-duplex]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/read-notes/hafl-duplex.png  
+[pipe-after-fork]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/read-notes/pipe-after-fork.png  
+[parent-to-child]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/read-notes/parent-to-child.png  
+
 -EOF-
 
 
