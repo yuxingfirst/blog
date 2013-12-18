@@ -131,7 +131,7 @@ pipes是在所有unix系统中均被支持的最老的进程通信方式。同�
 通过上边的代码就可以控制父子进程的运行顺序。因为在WAIT_XXX函数中调用read会发生阻塞，直到某个进程在相应管道中写入数据。  
 
 不过，有一点需要注意的是，每一个管道都会有一个额外的读取进程，也就是说，子进程从pfd[0]读取，父进程上也这个管道的读端,不过由于父进程并没有执行对该管道的读操作，所以不会有任何影响。不过，比较好的做法是在父子进程中关闭相应的管道的某一端。  
-比如，如果父进程在pfd1[0]这端读，子进程在pfd1[1]写，那么就要父进程中关闭pfd1[1]，子进程中关闭pfd1[0]; 
+比如，如果父进程在pfd1[0]这端读，子进程在pfd1[1]写，那么就要父进程中关闭pfd1[1]，子进程中关闭pfd1[0];   
 
 [half-duplex]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/read-notes/half-duplex.png  
 [pipe-after-fork]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/read-notes/pipe-after-fork.png  
