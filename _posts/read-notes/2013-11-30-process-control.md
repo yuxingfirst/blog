@@ -81,12 +81,8 @@ description: 进程控制.
 父进程发的异步通知。调用wait和waitpid的进程会有以下三种情况发生：  
 
 1. 如果其所有子进程都还在运行，则阻塞。  
-2. 如果一个子进程已终止，正等待父进程获取其终止状态，则取得该子进程的终止状态立即返回。  
+2. 如果一个子进程已终止，正等待父进程获取其终止状态，则取得该子进程的终止状态立即返回。    
 3. 如果没有任何 ，则立即出错返回。  
-
-	include <sys/wait.h>  
-	pid_t wait(int *statloc);  
-	pid_t waitpid(pid_t pid, int *statloc, int options); 
 
 
 其区别如下:  
