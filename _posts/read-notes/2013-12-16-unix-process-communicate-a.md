@@ -2,7 +2,7 @@
 title: Unix进程通信-pipes
 layout: post
 categories: [读书笔记]
-tags: [APUE读书笔记-Chapter15, 进程通信]
+tags: [进程通信]
 description: Unix进程通信之管道(pipes)
 ---
 
