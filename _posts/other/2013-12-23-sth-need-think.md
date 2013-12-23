@@ -2,7 +2,7 @@
 title: Distribution system
 layout: post
 categories: [other]
-tags: [Distribution system]
+tags: [Distribution-System]
 description: .
 ---
 
