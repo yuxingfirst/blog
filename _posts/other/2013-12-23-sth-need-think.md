@@ -1,8 +1,8 @@
 ---
-title: Distribute system
+title: Distribution system
 layout: post
-categories: [linux-c]
-tags: [linux-c]
+categories: [other]
+tags: [Distribution system]
 description: .
 ---
 
