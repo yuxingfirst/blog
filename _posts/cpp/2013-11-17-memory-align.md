@@ -1,7 +1,7 @@
 ---
 title: 内存对齐
 layout: post
-categories: [c]
+categories: [linux-c]
 tags: [c]
 description: 内存对齐介绍.
 ---
