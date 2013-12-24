@@ -1,8 +1,8 @@
 ---
 title: APUE读书笔记-Chapter8-进程控制
 layout: post
-categories: [读书笔记]
-tags: [c, unix]
+categories: [Unix]
+tags: [读书笔记, 进程]
 description: 进程控制.
 ---
 

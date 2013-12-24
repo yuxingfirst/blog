@@ -1,8 +1,8 @@
 ---
 title: APUE读书笔记-Chapter7-进程环境
 layout: post
-categories: [读书笔记]
-tags: [c, unix]
+categories: [Unix]
+tags: [c, 读书笔记]
 description: 进程环境.
 ---
 

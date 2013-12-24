@@ -1,7 +1,7 @@
 ---
 title: strncpy与strcpy
 layout: post
-categories: [c]
+categories: [linux-c]
 tags: [c]
 description: 字符串处理函数strncpy、strcpy介绍.
 ---
