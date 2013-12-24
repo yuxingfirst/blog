@@ -52,6 +52,23 @@ IOS C要求下列缓冲特征:
 
 使用setbuf打开或关闭缓冲机制。为了带缓冲进行I/O，参数buf必须指向一个长度BUFSIZ的缓冲区(该常量定义在<stdio.h\>中)。通常在此之后该流就是全缓冲的，但是如果该流于一个终端设备相关，那么某些系统也可将其设置为行缓冲。为了关闭缓冲，将buf设置为NULL。  
 
+使用setvbuf，我们可以精确地指定所需的缓冲类型。由mode参数指定:  
 
+	_IOFBF 全缓冲
+	_IOLBF 行缓冲
+	_IONBF 无缓冲  
+
+我们看下apue中的总结:
+
+![img1][standard_io_buf]
+
+通常，应由系统选择缓冲区的长度，并自动分配缓冲区。在这种情况下关闭此流时，标准I/O库将自动释放缓冲区。  
+
+任何时候，我们都可以强制刷新一个流:  
+
+	#include <stdio.h>
+	int fflush(FILE *fp);
+
+[standard_io_buf]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-c/standard_io_buf.png
 
 -EOF-
