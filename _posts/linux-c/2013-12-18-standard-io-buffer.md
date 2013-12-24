@@ -60,7 +60,6 @@ IOS C要求下列缓冲特征:
 
 我们看下apue中的总结:  
 
-![img][io_buf]
 
 通常，应由系统选择缓冲区的长度，并自动分配缓冲区。在这种情况下关闭此流时，标准I/O库将自动释放缓冲区。  
 
@@ -68,7 +67,5 @@ IOS C要求下列缓冲特征:
 
 	#include <stdio.h>
 	int fflush(FILE *fp);  
-
-[io_buf]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-c/standard_io_buf.png
 
 -EOF-
