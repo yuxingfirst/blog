@@ -58,17 +58,13 @@ IOS C要求下列缓冲特征:
 	_IOLBF 行缓冲
 	_IONBF 无缓冲  
 
-我们看下apue中的总结:
-
-![img1][standard_io_buf]
+我们看下apue中的总结:  
 
 通常，应由系统选择缓冲区的长度，并自动分配缓冲区。在这种情况下关闭此流时，标准I/O库将自动释放缓冲区。  
 
 任何时候，我们都可以强制刷新一个流:  
 
 	#include <stdio.h>
-	int fflush(FILE *fp);
-
-[standard_io_buf]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-c/standard_io_buf.png
+	int fflush(FILE *fp);  
 
 -EOF-
