@@ -61,7 +61,5 @@ IOS C要求下列缓冲特征:
 	_IOFBF 全缓冲
 	_IOLBF 行缓冲
 	_IONBF 无缓冲  
-
- 
-
+	
 -EOF-
