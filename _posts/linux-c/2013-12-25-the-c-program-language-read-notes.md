@@ -1,5 +1,5 @@
 ---
-title:  "The C Program Language"-¶ÁÊé±Ê¼Ç
+title:  "The C Program Language"-è¯»ä¹¦ç¬”è®°
 layout: post
 categories: [linux-c]
 tags: [linux-c]
