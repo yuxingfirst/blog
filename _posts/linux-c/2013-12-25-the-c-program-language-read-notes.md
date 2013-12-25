@@ -1,5 +1,5 @@
 ---
-title:  "The C Program Language"-读书笔记
+title: "The C Program Language"-读书笔记
 layout: post
 categories: [linux-c]
 tags: [linux-c]
