@@ -3,7 +3,7 @@ title: 协程简介及协程库libcoro性能测试
 layout: post
 categories: [other]
 tags: [coroutine]
-description:   
+description:   .
 ---  
 
 ###协程(coroutine)
