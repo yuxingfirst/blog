@@ -1,9 +1,9 @@
 ---
-title: Linux下代码编辑三板斧:vim、find、grep
+title: Linux下代码编辑三大件:vim、find、grep
 layout: post
 categories: [other]
 tags: [vim]
-description:   
+description:  . 
 ---
 
 ###1. vim
@@ -19,6 +19,13 @@ description:
 
 1. 在垂直分屏时，可以使用 <code>:vertical res n</code>， 来调整屏幕尺寸。
 2. 在水平分屏时，使用 <code>:res n</code>，来调整屏幕尺寸。  
+
+使用tips:
+
+	0 → 到行头
+	^ → 到本行第一个非blank字符
+	$ → 到行尾
+	g_ → 到本行最后一个不是blank字符的位置
 
 ###2. find
 
