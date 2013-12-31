@@ -105,6 +105,8 @@ Git 本地分支管理
     git rebase master <branch>       # 将master rebase到branch，相当于：
     git co <branch> && git rebase master && git co master && git merge <branch>  
 
+	git cherry-pick $id			# 将某次提交合并到当前的分支, 这个命令非常适合合并其他分支的某一个提交到当前分支
+
 Git补丁管理(方便在多台机器上开发同步时用)
 ====================================  
 
