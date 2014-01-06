@@ -23,6 +23,13 @@ Git配置
 Git常用命令
 =========  
 
+设置输出颜色
+
+	git config --global color.status auto  
+	git config --global color.diff auto  
+	git config --global color.branch auto  
+	git config --global color.interactive auto  
+
 查看、添加、提交、删除、找回，重置修改文件  
 
     git help <command>  # 显示command的help
