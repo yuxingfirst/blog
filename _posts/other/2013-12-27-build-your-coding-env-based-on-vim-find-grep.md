@@ -30,6 +30,11 @@ vim使用tips:
 	ctrl + d → 下翻半页
 	ctrl + u → 上翻半页
 
+	不退出vim 执行命令 cmd
+	:r !cmd
+	不退出vim执行命令cmd,并将cmd的输出内容插入当前文本中。
+	:shell
+	切换到shell里（此时并没有退出vim，可以理解成vim转入后台），你可以在shell中做任何操作，退出shell（比如用exit）后，会切换回原来的vim中
 
 ###2. find
 
