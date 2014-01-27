@@ -26,5 +26,4 @@ Demo: http://dbtek.github.io/dbyll/
 
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dbtek/dbyll/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
