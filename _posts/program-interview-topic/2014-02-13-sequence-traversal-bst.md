@@ -9,7 +9,7 @@ description:  .
 **题目**:  
 从上往下遍历二叉树(层序遍历，广度优先遍历)
 
-		7
+        7
 	   / \
       5   10
      / \  / \
@@ -47,23 +47,23 @@ description:  .
 		return;
 	}
 	
-	   操作					队列(对头->队尾)
-	push_deq: 7		->		7
+	   操作			        队列(对头->队尾)
+	push_deq: 7     ->      7
 	print: 7
-	push_deq: 5 10	->		10 5 7
-	pop_deq			->		10 5
+	push_deq: 5 10  ->      10 5 7
+	pop_deq         ->      10 5
 	print: 5
-	push_deq: 1 6	->		6 1 10 5
-	pop_deq			->		6 1 10
+	push_deq: 1 6   ->      6 1 10 5
+	pop_deq         ->      6 1 10
 	print: 10
-	push_deq:8 12	->		12 8 6 1 10
-	pop_deq			->		12 8 6 1
+	push_deq:8 12   ->      12 8 6 1 10
+	pop_deq         ->      12 8 6 1
 	print 1
-	pop_deq			->		12 8 6
+	pop_deq         ->      12 8 6
 	print 6
-	pop_deq			->		12 8
+	pop_deq         ->      12 8
 	print 8
-	pop_deq			->		12
+	pop_deq         ->      12
 	print 12
 	pop_deq
 
