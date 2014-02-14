@@ -1,8 +1,8 @@
 ---
 title: 字符串的循环移位操作(左旋转字符串)
 layout: post
-categories: [Algorithm]
-tags: [Algorithm, 编程珠玑]
+categories: [算法]
+tags: [编程珠玑, 算法]
 description: 字符串循环移位. 
 ---
 【本篇来自编程珠玑第二章的读后记录】

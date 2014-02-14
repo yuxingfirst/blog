@@ -1,8 +1,8 @@
 ---
 title: 编程珠玑算法整理
 layout: post
-categories: [Algorithm]
-tags: [Algorithm, 编程珠玑]
+categories: [算法]
+tags: [编程珠玑, 算法]
 description: 编程珠玑算法整理. 
 ---
 

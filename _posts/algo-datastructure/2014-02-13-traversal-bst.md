@@ -2,12 +2,64 @@
 title: 二叉树的遍历(前序，中序，后序，层序)
 layout: post
 categories: [数据结构]
-tags: [树]
+tags: [二叉树, Interview]
 description:  .
 ---  
 
-**题目**:  
-从上往下遍历二叉树(层序遍历，广度优先遍历)
+二叉树的定义:
+
+	struct BSTreeNode
+	{
+		int m_nValue;
+		struct BSTreeNode *pLeft;
+		struct BSTreeNode *pRight;
+	}
+
+###### 前序遍历二叉树
+
+        7
+	   / \
+      5   10
+     / \  / \
+     1  6 8  12
+
+输出： 7 -> 5 -> 1 -> 6 -> 10 -> 8 -> 12  
+
+	void preOrder(BSTreeNode *pNode) 
+	{
+		if(!pNode) {
+			return;
+		}
+		cout << pNode->m_nValue << ",";
+		preOrder(pNode->pLeft);
+		preOrder(pNode->pRight);
+	}
+
+##
+
+######中序遍历
+
+        7
+	   / \
+      5   10
+     / \  / \
+     1  6 8  12
+
+输出： 7 -> 5 -> 1 -> 6 -> 10 -> 8 -> 12  
+
+	void preOrder(BSTreeNode *pNode) 
+	{
+		if(!pNode) {
+			return;
+		}
+		cout << pNode->m_nValue << ",";
+		preOrder(pNode->pLeft);
+		preOrder(pNode->pRight);
+	}
+  
+##
+
+###### 从上往下遍历二叉树(层序遍历，广度优先遍历)
 
         7
 	   / \
@@ -20,13 +72,6 @@ description:  .
 **分析**：
 要从上往下遍历二叉树，同一层的节点按照从左至右的顺序，当访问根节点7时，为了下次访问其子节点，需要将子节点放入一个容器中；并且，当访问根节点的子节点时，为了访问子节点的子节点，同样需要将其放入一个容器中，并且先放入的要先访问，所以可以用队列来保存。
 
-	struct BSTreeNode
-	{
-		int m_nValue;
-		struct BSTreeNode *pLeft;
-		struct BSTreeNode *pRight;
-	}
-	
 	void SequenceTraversalBST(BSTreeNode *pRoot) {
 		if(!pRoot) {
 			return;
