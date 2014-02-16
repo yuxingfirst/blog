@@ -35,7 +35,7 @@ description:  .
 		preOrder(pNode->pRight);
 	}
 
-##
+
 
 ######中序遍历
 
@@ -57,7 +57,25 @@ description:  .
 		preOrder(pNode->pRight);
 	}
   
-##
+######后序遍历
+
+        7
+	   / \
+      5   10
+     / \  / \
+     1  6 8  12
+
+输出： 1 -> 6 -> 5 -> 8 -> 12 -> 10 -> 7
+
+	void pastOrder(BSTreeNode *pNode) 
+	{
+		if(!pNode) {
+			return;
+		}
+		pastOrder(pNode->pLeft);
+		pastOrder(pNode->pRight);
+		cout << pNode->m_nValue << ",";
+	}
 
 ###### 从上往下遍历二叉树(层序遍历，广度优先遍历)
 
