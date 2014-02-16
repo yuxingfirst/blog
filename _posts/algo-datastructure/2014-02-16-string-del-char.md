@@ -3,7 +3,7 @@ title: 从字符串中删除某个特定字符
 layout: post
 categories: [算法]
 tags: [字符串]
-description:    
+description:  .  
 --- 
 
 通常，我们会遇到要从字符串中删除某个或某些特殊的字符，比如去除字符串中的空格。  
