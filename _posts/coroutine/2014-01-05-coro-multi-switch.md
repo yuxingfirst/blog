@@ -1,7 +1,7 @@
 ---
 title: 协程的多线程切换
 layout: post
-categories: [coroutine]
+categories: [linux-c]
 tags: [coroutine]
 description: coro multiple thread switch.
 ---

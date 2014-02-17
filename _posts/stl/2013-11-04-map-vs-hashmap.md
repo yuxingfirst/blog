@@ -1,8 +1,8 @@
 ---
 title: map,set与hash_map,hash_set对比
 layout: post
-categories: [stl]
-tags: [stl,c++]
+categories: [cpp]
+tags: [stl]
 description: .
 ---
  

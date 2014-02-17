@@ -1,7 +1,7 @@
 ---
 title: 协程简介及协程库libcoro性能测试
 layout: post
-categories: [coroutine]
+categories: [linux-c]
 tags: [coroutine]
 description:   .
 ---  
