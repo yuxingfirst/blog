@@ -1,8 +1,8 @@
 ---
 title: Distribution system
 layout: post
-categories: [other]
-tags: [Distribution-System]
+categories: [后端server]
+tags: []
 description: .
 ---
 

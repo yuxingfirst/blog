@@ -1,7 +1,7 @@
 ---
 title: git命令备忘
 layout: post
-categories: [other]
+categories: [程序工具]
 tags: [git]
 description: .
 ---

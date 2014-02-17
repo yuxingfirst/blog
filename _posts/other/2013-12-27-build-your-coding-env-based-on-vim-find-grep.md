@@ -1,7 +1,7 @@
 ---
 title: Linux下代码编辑三大件:vim、find、grep
 layout: post
-categories: [other]
+categories: [程序工具]
 tags: [vim]
 description:  . 
 ---
