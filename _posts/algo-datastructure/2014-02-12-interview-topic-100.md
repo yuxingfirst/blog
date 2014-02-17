@@ -1,9 +1,9 @@
 ---
-title: 程序员面试题精选100-二叉树相关
+title: 二叉树相关
 layout: post
-categories: [Program-Interview-Series]
-tags: [面试，二叉树]
-description:  二叉树相关面试题.
+categories: [数据结构]
+tags: [二叉树]
+description:  .
 ---  
 
 ###01. 二叉查找树转换为排序的双向链表
