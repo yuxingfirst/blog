@@ -2,7 +2,7 @@
 title: Redis持久化机制
 layout: post
 categories: [后端server]
-tags: [Redis]
+tags: [redis]
 description:  .
 ---
 
