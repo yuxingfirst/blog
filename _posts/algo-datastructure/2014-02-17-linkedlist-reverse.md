@@ -9,6 +9,12 @@ description:  .
 关于单链表的逆置，整体来说，可以利用三个指针(包含一个临时指针)来完成单链表的逆置。需要注意的是边界条件的判定。  
 
 	//
+	struct ListNode {
+		int val;
+		ListNode *next;
+		ListNode(int x) : val(x), next(NULL) {}
+	};
+
 	void list_reverse(ListNode *&head)
 	{
 		if (!head) {
