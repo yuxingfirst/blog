@@ -70,18 +70,20 @@ description:  .
 
 ###五、多线程和多进程的区别  
 
-1： cpu调度
+数据共享
 
-2： 上下文切换
+1. 进程是资源分配的最小单位，每个进程有自己的地址空间，含有自己的寄存器，存储空间(代码段，数据段，堆栈)。而线程是cpu调度的基本单位，即程序执行的最小单位；线程运行在进程中，共享进程的地址空间(即存储空间)，不过，每个线程有自己的寄存器和栈空间。
+2. 同一进程下的线程共享的部分包括:全局变量和静态变量，这样多个线程之间的通信就非常方便了，不过随之而来的数据同步和互斥也比较麻烦。而进程之间的通信只能通过诸如：socket, pipe(管道), fifo(命名管道)等等，通信方式没有线程那么方便，不过也减少了数据同步与互斥的问题。
 
-3： 数据共享
+![img2][process-and-thread]
 
-4： 多核cpu利用率
+上下文切换
 
-5： 资源占用
+线程的上下文切换和进程的上下文切换的最主要差别，在于线程的上下文切换后，虚拟内存空间仍然是有效的(因为线程共享进程的内存空间)；而进程的上下文切换后，虚拟地址空间就失效了。另外，进程在切换后，处理器的内存地址缓存也都失效了，开销很大。  
 
-6：一个线程私有的东西有哪些?
+线程私有的数据
 
+线程私有的东西有: 栈空间，寄存器。
 
 ###六、常见的信号
 	
@@ -93,6 +95,8 @@ description:  .
 	SIGKILL   	终止进程     		杀死进程
 	SIGALARM   	终止进程     		计时器到时
 	SIGCHLD   	忽略信号     		当子进程停止或退出时通知父进程
+
+	SIGPIPE     对一个已经关闭写端的套接字继续调用write会产生这个信号
 
 ###七、i++是否原子操作
 原子操作，如果编译成一条指令，那么必定是原子操作；如果编译为多条指令，如果加了锁，则是原子操作，没加锁的话，就不一定是原子操作了。  
@@ -180,8 +184,32 @@ fork两次。
 
 ###十五、c++ string的实现(复制构造函数， 赋值操作符operator=)
 
-###十六、虚函数的作用和实现原理
+注意字符串结尾的字符串结束符，拷贝构造函数，赋值操作符，析构函数, 深浅拷贝。
 
+	class mystring
+	{
+		private:
+			int size;
+			char *data;
+
+		public:
+			mystring()
+			:size(0), data(new char[1])
+			{}
+			
+			~mystring();
+
+			mystring(const mystring &rstring);
+
+			mystring& operator=(const mystring &);
+			
+			const char* c_str();
+	}
+
+###十六、虚函数的作用和实现原理
+c++中的虚函数主要是实现了多态的机制，即通过父类型的指针或引用指向其子类型的实例，然后可以通过父类型的指针或引用调用子类的成员函数。  
+
+主要是通过一张虚函数表以及指向虚函数表的指针来实现的。每一个包含虚函数的类的实例都包含一个指向虚函数表首地址的指针。我们可以根据这个指针找到虚函数表进而找到对应的虚函数并实现调用。为了提高效率，c++编译器重视保证虚函数表的指针位于对象实例最开始的位置，所以我们可以直接通过对象实例的地址来访问虚函数表。   
 
 ###十七、sizeof求一个类的大小(注意注意成员变量，函数，虚函数，继承等等对类大小的影响)
 
@@ -193,28 +221,62 @@ fork两次。
 
 含有虚函数的类需要考虑虚函数表指针。
 
-###十八、指针和引用的区别
+###十八、指针和引用的区别  
+区别  
+
+1. 引用是一个别名，只能在定义的时候初始化且必须初始化，之后不可改变。指针可以改变
+2. 指针是指向一块内存空间。
+3. sizeof 引用得到的是指向的变量(对象)的大小；而sizeof 指针得到的是指针本身的大小。
+ 
 
 ###十九、extern c是干什么的(理清编译器的函数名修饰的机制)?
 
 ###二十、volatile的作用(cpu的寄存器缓存机制)
+多线程编程中， 如果一个**共享变量**被volatile修饰，则编译器不会把它保存到寄存器中，，当需要使用这个变量的时候，每次都去实际保存这个变量的内存中访问该变量。
 
-###二十一、hash, 为什么hashtable的桶数会去一个素数? 如何有效避免碰撞?  
+###二十一、hash, 为什么hashtable的桶数会取一个素数? 如何有效避免碰撞?  
 
 ###二十二、各类排序、快排(如何避免最糟糕的状态)
 
 ###二十三、tcp/udp的区别，udp调用connect的作用，tcp连接时序图，状态图
 
+通常，在udp编程中，我们只需要使用下边两个函数就可以了:
+
+	int sendto(int s, const void *msg, size_t len, int flags, const struct sockaddr *to, socklen_t tolen); 
+
+	int  recvfrom(int  s, void *buf, size_t len, int flags, struct sockaddr *from,  socklen_t *fromlen);
+
+并不需要像tcp那样需要预先创建连接，在发送或者接受数据的时候指定地址就可以了。不同有时候在进行udp编程的时候，我们也会先调用connect, 那么调用connect的作用是什么呢?主要有以下几点:  
+
+1. 选定了对端，内核只会将绑定对象的对端发来的数据报传给套接口，因此在一定环境下可以提升安全性  
+2. 会返回异步错误，如果对端没启动，默认情况下发送的包对应的ICMP回射包不会给调用进程，如果用了connect，则会回射ICMP
+3. 发送两个包间不要先断开再连接，提升了效率
+
+tcp连接时序图参考: [tcp详细分析](http://coderworm.com//%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/2013/11/11/TCP-conn-status-analysis.html)
+
 ###二十四、select和epoll的区别，epoll有哪些触发模式(水平触发和边缘触发的区别以及边缘触发在编程中要做哪些更多的确认)
 
-###二十五、 tcp结束链接怎么握手，time_wait状态是什么? 为什么会有time_wait? 哪一方会有time_wait状态? 如何避免time_wait状态占用资源?
+###二十五、 tcp结束链接怎么握手，time\_wait状态是什么? 为什么会有time\_wait? 哪一方会有time\_wait状态? 如何避免time\_wait状态占用资源?  
+
+主动关闭连接的一端调用close或shutdown，使得tcp协议栈发送FIN分节，对端tcp收到这个FIN分节后,传回应用进程同时并回射ack；此时，应用进程内的read函数返回0，得知它的对端以关闭连接，所以它也要调用close关闭连接，这样，对端tcp同样也发送FIN,主动关闭的这端收到这个FIN并响应ack，此时，主动关闭的这端tcp进入time_wait状态。  
+
+参考这个图:
+![img3](https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/tcp-zhuangtai.gif)
+
+为什么需要time\_wait呢？   
+因为如果不进入time_wait而直接关闭tcp连接的话，如果最后一个ack因为某些原因没到到达，这可能导致对端tcp重传FIN，那么当重传的FIN到达的时候，因为这个tcp连接已经被关闭了，所以直接响应一个RST，这样就导致重传FIN的这端不是进入有序终止状态而是进入错误状态。
+
+为"离群的段"提供从网络中消失的时间，考虑在同一个端口上的新连接。如果离群的端重新在新连接上被接受，则可能破坏新连接。
 
 ###二十六、 对socket套接字设置非阻塞，如果select返回套接字可读，但返回0，什么情况?
 对端关闭了链接(调用了close或者shutdown),tcp协议栈发送FIN分节。
 
 ###二十七、 常用tcp选项
 
+	TCP_DEFER_ACCEPT	
+
 
 [linux-process-memory-layout]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-c/linux-process-memory-layout.png  
+[process-and-thread]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-c/process-and-thread.png
 
 -EOF-
