@@ -275,8 +275,78 @@ tcp连接时序图参考: [tcp详细分析](http://coderworm.com//%E7%BD%91%E7%B
 
 	TCP_DEFER_ACCEPT	
 
+###二十八、 TCP包头信息
+TCP协议头最少20个字节，包括以下的区域：
+
+TCP源端口(Source Port)：16位的源端口其中包含初始化通信的端口。源端口和源IP地址的作用是
+标示报问的返回地址。  
+
+TCP目的端口(Destination port)：16位的目的端口域定义传输的目的。这个端口指明报文接收计算
+机上的应用程序地址接口。  
+
+TCP序列号（序列码,Sequence Number）：32位  
+
+TCP应答号(Acknowledgment Number)：32位的序列号由接收端计算机使用，重组分段的报文成最初形式。，如果设置了ACK控制位，这个值表示一个准备接收的包的序列码。  
+
+数据偏移量(HLEN)：4位包括TCP头大小，指示何处数据开始。  
+
+保留(Reserved)：6位值域，这些位必须是0。为了将来定义新的用途所保留。  
+
+标志(Code Bits)：6位标志域。表示为：紧急标志、有意义的应答标志、推、重置连接标志、同步序列号标志、完成发送数据标志。按照顺序排列是：URG、ACK、PSH、RST、SYN、FIN。  
+
+窗口(Window)：16位，用来表示想收到的每个TCP数据段的大小。  
+
+校验位(Checksum)：16位TCP头。源机器基于数据内容计算一个数值，收信息机要与源机器数值结果完全一样，从而证明数据的有效性。  
+
+优先指针（紧急,Urgent Pointer）：16位，指向后面是优先数据的字节，在URG标志设置了时才有效。如果URG标志没有被设置，紧急域作为填充。加快处理标示为紧急的数据段。   
+
+选项(Option)：长度不定，但长度必须以字节。如果 没有 选项就表示这个一字节的域等于0。  
+
+数据（Date）：应用程序的数据。  
+
+![img5][tcp-header]
+
+###二十九、 函数入栈的顺序
+
+由于栈地址是从高往低分配的，所以栈底是高地址，栈顶是低地址。函数从右向左入栈。  
+
+###三十、 webproxy多个worker进程产生唯一的序列号
+
+	信号量的工作原理
+		
+	信号量是一个特殊变量，只允许对它进行等待(wait)和发送信号(signal)这两种操作
+	P(信号量变量): 用于等待
+	V(信号量变量): 用于发送信号
+
+	PV原语是对整数计数器信号量sv的操作。一次P操作使sv减一，而一次V操作使加一。
+	
+	P(sv)  
+		如果 sv的值 >  零, 就给它减去1,并获得临界区的执行权限。
+        如果sv的值 == 零, 就挂起该进程的执行。
+	V(sv)  
+		如果有其它进程因等待sv而被挂起, 就让它恢复运行;
+        如果没有进程因等待sv而被挂起,   就给它加1。
+
+	采用共享内存的方式，生成唯一的序列号
+
+	linux信号量接口:
+	int semget(key_t key, int num_sems, int sem_flags); 
+	int semop(int sem_id, struct sembuf *sem_opa, size_t num_sem_ops); 
+	int semctl(int sem_id, int sem_num, int command, ...);  
+
+### 三十一、 printf的实现原理
+printf为可变参数函数，参数从右向左入栈，由于x86的栈空间向下增长，所以只要根据第一个格式参数format的地址向上移动，就可以得到其他参数的地址。  
+c语言中相关的宏:
+
+	va_list
+	va_start
+	va_arg
+	va_end  
+
+printf得到参数个数是通过解析格式化字符串的"%"来实现的。 
 
 [linux-process-memory-layout]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-c/linux-process-memory-layout.png  
 [process-and-thread]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-c/process-and-thread.png
+[tcp-header]: https://raw.github.com/yuxingfirst/blog/gh-pages/_images/linux-network-program/tcp-header.gif
 
 -EOF-
