@@ -1,7 +1,7 @@
 ---
 title: Redis主从复制机制
 layout: post
-categories: [后端server]
+categories: [开源存储]
 tags: [redis]
 description: .
 ---

@@ -1,7 +1,7 @@
 ---
 title: http重定向原理
 layout: post
-categories: [web]
+categories: [技术研究]
 tags: [http, django]
 description: http重定向原理,django示例
 ---

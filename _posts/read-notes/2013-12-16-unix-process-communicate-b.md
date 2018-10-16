@@ -1,7 +1,7 @@
 ---
 title: popen和pclose
 layout: post
-categories: [Unix]
+categories: [读书笔记]
 tags: [进程通信, 读书笔记]
 description: popen和pclose介绍。  
 ---

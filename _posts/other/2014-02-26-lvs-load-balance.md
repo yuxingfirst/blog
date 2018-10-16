@@ -1,7 +1,7 @@
 ---
 title: LVS和负载均衡
 layout: post
-categories: [后端server]
+categories: [技术研究]
 tags: [lvs]
 description: 网站接入层的一些做法.
 ---

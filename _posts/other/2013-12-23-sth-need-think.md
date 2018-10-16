@@ -1,7 +1,7 @@
 ---
 title: Distribution system
 layout: post
-categories: [后端server]
+categories: [技术研究]
 tags: []
 description: .
 ---

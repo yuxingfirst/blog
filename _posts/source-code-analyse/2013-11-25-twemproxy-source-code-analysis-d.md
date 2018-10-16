@@ -1,7 +1,7 @@
 ---
 title: twemproxy源码分析part4-conn及client请求逻辑
 layout: post
-categories: [源码分析]
+categories: [技术研究]
 tags: [redis, twemproxy]
 description: .
 ---

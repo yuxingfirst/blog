@@ -1,7 +1,7 @@
 ---
 title: Redis持久化机制
 layout: post
-categories: [后端server]
+categories: [开源存储]
 tags: [redis]
 description:  .
 ---
