@@ -1,20 +1,16 @@
 # visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
 
-paginate: 10 # pagination based on number of posts
+paginate: 20 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 pygments: true
 
-title: codeworm
-description: a coderworm's footprint 
+title: Nikoxiong
+description: 技术之路
 author:
-  name: yuxing 
+  name: nikoxiong
   email: yuxingfirst@gmail.com 
-  github: yuxingfirst 
-  twitter: 201281062
-  pinterest: 
-  linkedin: JerryX
-  bio: a coderworm's footprint!
+  github: yuxingfirst
   email_md5: 4ac03b3603f6a91430c289a4ef23a32f 
 
 rss_path: feed.xml
