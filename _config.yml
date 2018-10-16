@@ -13,7 +13,7 @@ author:
   github: yuxingfirst
   email_md5: 4ac03b3603f6a91430c289a4ef23a32f 
 
-rss_path: feed.xml
+#rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
 
