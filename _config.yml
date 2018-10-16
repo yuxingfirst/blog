@@ -21,7 +21,7 @@ rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
 
-BASE_PATH: http://coderworm.com
+BASE_PATH: http://yuxingfirst.github.io/blog/
 
 ORIGIN_PATH: https://raw.github.com/yuxingfirst/blog/gh-pages
 
