@@ -1,7 +1,7 @@
 ---
 title: Linux编程基础
 layout: post
-categories: [linux-c]
+categories: [linux-c-cpp]
 tags: [linux-c]
 description:  .
 ---  
