@@ -7,19 +7,6 @@ tagline:
 {% for post in paginator.posts %}
 
         <article class="home">
-
-            <div>
-                {% if post.fullview %}
-                  {{ post.content }}
-                {% else %}
-                    {% if post.shortinfo %}
-                        {{ post.shortinfo }}
-                    {% else %}
-                        {{ post.excerpt }}
-                    {% endif %}
-                {% endif %}
-            </div>
-
             <h2>
                 <a href="{{ site.BASE_PATH }}{{ post.url }}" style="font-size: 20px;">{{ post.title }}</a>
             </h2>
