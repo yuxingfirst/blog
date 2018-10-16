@@ -1,8 +1,8 @@
 ---
 title: Longest Substring Without Repeating Characters
 layout: post
-categories: [Leetcode解题报告]
-tags: [算法]
+categories: [算法]
+tags: [Leetcode]
 description: Given a string, find the length of the longest substring...
 ---
 

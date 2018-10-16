@@ -1,8 +1,8 @@
 ---
 title: Merge Sorted Array
 layout: post
-categories: [Leetcode解题报告]
-tags: [算法]
+categories: [算法]
+tags: [Leetcode]
 description: Given two sorted integer arrays A and B, merge...
 ---
 

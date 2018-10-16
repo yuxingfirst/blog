@@ -1,7 +1,7 @@
 ---
 title: 标准I/O缓冲类型详解
 layout: post
-categories: [linux-c]
+categories: [linux-c-cpp]
 tags: [linux-c]
 description: 标准I/O缓冲类型。
 ---  

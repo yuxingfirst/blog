@@ -1,8 +1,8 @@
 ---
 title: Median of Two Sorted Arrays
 layout: post
-categories: [Leetcode解题报告]
-tags: [算法]
+categories: [算法]
+tags: [Leetcode]
 description: There are two sorted arrays A and B of ...
 ---
 

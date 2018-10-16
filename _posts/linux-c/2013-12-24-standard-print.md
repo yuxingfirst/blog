@@ -1,7 +1,7 @@
 ---
 title: 标准库printf函数族介绍
 layout: post
-categories: [linux-c]
+categories: [linux-c-cpp]
 tags: [linux-c]
 description: the functions in the printf() family.
 ---  

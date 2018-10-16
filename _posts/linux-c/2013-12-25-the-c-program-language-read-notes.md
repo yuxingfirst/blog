@@ -1,7 +1,7 @@
 ---
 title: The-C-Program-Language-读书笔记
 layout: post
-categories: [linux-c]
+categories: [linux-c-cpp]
 tags: [linux-c]
 description: c语言编程读书笔记.
 ---

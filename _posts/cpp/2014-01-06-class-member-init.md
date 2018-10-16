@@ -1,7 +1,7 @@
 ---
 layout: post
 title: c++类成员初始化规则
-categories: [cpp]
+categories: [linux-c-cpp]
 tags: [c++]
 description: .
 ---
