@@ -41,13 +41,13 @@ Cache解决的也是读的问题， 架构层面需要引入一层cache的时候
 
 ### 连接
 我们说TCP是可靠的网络传输协议， 而由于网络的不稳定性，数据在传输的过程中很容易丢失、乱序，所以TCP为了确保“可靠性”， 即发送方发送什么数据接收方一定要收到、并且发送方发送数据的顺序是什么则接收方接受到的数据顺序也要是一致的，于是要求通信双方在通信之前，必须建立“连接”，也就是说双方在通信之前需要互相确认”已经准备好了”，类似我们打电话之后需要先拨号。 而所谓的“连接”也不是说有一个实际的物理连接(当然数据链路层会有)， 只不过是在通讯双方维护的一个“连接状态”， TCP认为只有当一个“连接”状态为ESTABLISHED时双方才可以进行数据传输， 在实际编程中一般是connect与accept返回后我就可以进行数据的send与recv。 我们所熟知的三次握手、四次挥手也即套接字不同状态的变迁，如下图：
-![](2018-10-17-db-cache-disign/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_9e1ca90b-79ce-44f5-b6a5-a95221d91bcc.png)
+![](https://raw.githubusercontent.com/yuxingfirst/blog/gh-pages/_images/archtec/archtec_tcpflow.png)
 
 而UDP由于其本身的不可靠性， 并不需要像TCP那样需要具备重传、排序的特性， 他所做的就是知道对方的地址、然后把数据发送出去，并不需要“连接”。
 
 另外比较TCP和UDP的包头协议可以看到， TCP的包头字段复杂很多， 像Sequence Number、Acknowledgment Number、Window这些字段是UDP协议头中没有的， 而这些字段正是TCP解决诸如： 丢包重传、乱序、拥塞控制所必须的， 在TCP建立连接时这些字段值都会协商好。
-![](2018-10-17-db-cache-disign/tcp.png) 
-![](2018-10-17-db-cache-disign/udp.png)
+![](https://raw.githubusercontent.com/yuxingfirst/blog/gh-pages/_images/archtec/tcp.png) 
+![](https://raw.githubusercontent.com/yuxingfirst/blog/gh-pages/_images/archtec/udp.png)
 
 ### 编码
 我们在编写服务代码的过程中， 当传输层协议采用TCP或者UDP时，发送一个2000Byte的数据包是否会有不同？
