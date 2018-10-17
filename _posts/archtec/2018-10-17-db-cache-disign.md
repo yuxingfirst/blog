@@ -1,4 +1,11 @@
-#  几则基础技术问题总结
+---
+title: 几则基础技术问题总结
+layout: post
+categories: [架构设计]
+tags: [技术心得]
+description:   .
+--- 
+
 ## 查看服务器负载的指标和含义
 我们可以通过运行`top`（`uptime`、`w`也可以）来查看服务器的负载`load average`， 一般load average是这样展示的：`load average: 0.10, 0.15, 0.14`
 三个数值分别表示1分钟、5分钟、15分钟内系统的平均负载，具体负载的含义解释可以参考文章：[Understanding load averages](http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages)， 我们主要来看看如何评估我们的系统是否高负载了。
