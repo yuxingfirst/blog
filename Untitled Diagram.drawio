@@ -1,9 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2021-07-04T10:27:06.564Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="vkgDH0Dadqw1okFgrnaq" version="14.8.3" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-07-04T10:35:37.174Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="TnckO-1KMcWDVNK_JTNR" version="14.8.3" type="github" pages="2">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
     <mxGraphModel dx="2929" dy="1129" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="ldka-5FNK_S4JEufgtKj-85" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;strokeColor=#FF0000;" vertex="1" parent="1">
+          <mxGeometry x="-500" y="1690" width="1336" height="377" as="geometry" />
+        </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-68" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;strokeColor=#FF0000;" vertex="1" parent="1">
           <mxGeometry x="-500" y="1330" width="680" height="330" as="geometry" />
         </mxCell>
@@ -225,13 +228,13 @@
             <mxPoint x="330" y="790" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-22" value="&lt;font color=&quot;#ff0000&quot;&gt;需要先做代码检查&lt;/font&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" vertex="1" parent="1">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-22" value="&lt;font color=&quot;#ff0000&quot;&gt;需要先做代码检查&lt;/font&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#000000;strokeWidth=2;dashed=1;dashPattern=1 1;shadow=1;sketch=1;" vertex="1" parent="1">
           <mxGeometry x="340" y="560" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-23" value="&lt;font color=&quot;#ff0000&quot;&gt;COS解压逻辑，需要考虑解压之后的目录名，跟现在下发给前端的插件包目录名需要对应上&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="705" y="540" width="170" height="50" as="geometry" />
+        <mxCell id="ldka-5FNK_S4JEufgtKj-23" value="&lt;font color=&quot;#ff0000&quot;&gt;COS解压逻辑，需要考虑解压之后的目录名，跟现在下发给前端的插件包目录名需要对应上&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#000000;dashed=1;dashPattern=1 1;strokeWidth=2;shadow=1;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="691" y="382" width="170" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-24" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ldka-5FNK_S4JEufgtKj-23">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-24" value="" style="endArrow=none;html=1;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeColor=#FF0000;" edge="1" parent="1" source="ldka-5FNK_S4JEufgtKj-23">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="840" y="640" as="sourcePoint" />
             <mxPoint x="910" y="600" as="targetPoint" />
@@ -303,7 +306,7 @@
             <mxPoint x="1155" y="1210" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-47" value="&lt;font color=&quot;#ff0000&quot;&gt;从前端通知后台插件包上传成功开始，后续所有的处理对于开发者上传插件包来说都是异步的，每一步都有可能失败，考虑采用&lt;/font&gt;&lt;span style=&quot;color: rgb(255 , 0 , 0)&quot;&gt;状态机来实现&lt;/span&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" vertex="1" parent="1">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-47" value="&lt;font color=&quot;#ff0000&quot;&gt;从前端通知后台插件包上传成功开始，后续所有的处理对于开发者上传插件包来说都是异步的，每一步都有可能失败，考虑采用&lt;/font&gt;&lt;span style=&quot;color: rgb(255 , 0 , 0)&quot;&gt;状态机来实现&lt;/span&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#000000;dashed=1;dashPattern=1 1;strokeWidth=2;perimeterSpacing=0;glass=0;shadow=1;sketch=1;" vertex="1" parent="1">
           <mxGeometry x="300" y="400" width="200" height="80" as="geometry" />
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-48" value="插件商城" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
@@ -374,10 +377,10 @@
             <mxPoint x="-450" y="1630" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-69" value="&lt;font color=&quot;#ff0000&quot;&gt;用户安装之后即可使用插件，不过商城是P1的需求，P0没有安装过程，用户可以直接使用（要记录用户使用记录便于以后迁移）&lt;/font&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" vertex="1" parent="1">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-69" value="&lt;font color=&quot;#ff0000&quot;&gt;用户安装之后即可使用插件，不过商城是P1的需求，P0没有安装过程，用户可以直接使用（要记录用户使用记录便于以后迁移）&lt;/font&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;dashed=1;dashPattern=1 1;" vertex="1" parent="1">
           <mxGeometry x="-500" y="1240" width="190" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-70" value="29. 获取插件列表" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-70" value="29. 获取插件列表(getaddonlist)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
           <mxGeometry width="80" relative="1" as="geometry">
             <mxPoint x="-450" y="1720" as="sourcePoint" />
             <mxPoint x="-280" y="1720" as="targetPoint" />
@@ -404,7 +407,7 @@
         <mxCell id="ldka-5FNK_S4JEufgtKj-76" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeColor=#000000;fillColor=none;align=left;" vertex="1" parent="1">
           <mxGeometry x="-280" y="1840" width="10" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-77" value="33. 鉴权、安全逻辑" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;strokeColor=#000000;strokeWidth=1;" edge="1" target="ldka-5FNK_S4JEufgtKj-76" parent="1">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-77" value="33. invoke前置逻辑" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;strokeColor=#000000;strokeWidth=1;" edge="1" target="ldka-5FNK_S4JEufgtKj-76" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-275" y="1820" as="sourcePoint" />
             <Array as="points">
@@ -443,8 +446,8 @@
             <mxPoint x="-450" y="2000" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-85" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;strokeColor=#FF0000;" vertex="1" parent="1">
-          <mxGeometry x="-500" y="1690" width="1336" height="377" as="geometry" />
+        <mxCell id="ldka-5FNK_S4JEufgtKj-87" value="&lt;span style=&quot;font-size: 11px ; text-align: left&quot;&gt;&lt;font color=&quot;#ff0000&quot;&gt;1. 鉴权、安全逻辑&lt;br&gt;2. 插件安装逻辑&lt;/font&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;dashed=1;dashPattern=1 1;" vertex="1" parent="1">
+          <mxGeometry x="-133" y="1793" width="124" height="42" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
