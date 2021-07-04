@@ -1,9 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2021-07-04T10:14:28.686Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="lVcWAnxUuwRzaPTVddmt" version="14.8.3" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-07-04T10:17:11.800Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="LDtVCpz6mg2Yc3XfFitk" version="14.8.3" type="github" pages="2">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
     <mxGraphModel dx="3229" dy="1163" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="ldka-5FNK_S4JEufgtKj-68" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;strokeColor=#FF0000;" vertex="1" parent="1">
+          <mxGeometry x="-500" y="1330" width="680" height="330" as="geometry" />
+        </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-46" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;strokeColor=#FF0000;" vertex="1" parent="1">
           <mxGeometry x="270" y="495" width="1920" height="815" as="geometry" />
         </mxCell>
@@ -367,6 +370,9 @@
             <mxPoint x="120" y="1630" as="sourcePoint" />
             <mxPoint x="-450" y="1630" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-69" value="&lt;font color=&quot;#ff0000&quot;&gt;用户安装之后即可使用插件，不过商城是P1的需求，P0没有安装过程，用户可以直接使用（要记录用户使用记录便于以后迁移）&lt;/font&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-500" y="1240" width="190" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
