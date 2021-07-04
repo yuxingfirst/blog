@@ -1,26 +1,46 @@
-<mxfile host="app.diagrams.net" modified="2021-07-04T09:29:53.733Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="9UuhEHnFMcI3nGHXmkdW" version="14.8.3" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-07-04T09:45:22.483Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="3OlnsKE5HjxlfCP_roLd" version="14.8.3" type="github" pages="2">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
-    <mxGraphModel dx="3195" dy="1129" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3229" dy="1163" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="ldka-5FNK_S4JEufgtKj-20" value="静态检查成功" style="shape=umlFrame;whiteSpace=wrap;html=1;width=90;height=20;" vertex="1" parent="1">
-          <mxGeometry x="290" y="610" width="820" height="220" as="geometry" />
+        <mxCell id="ldka-5FNK_S4JEufgtKj-45" value="插件包审核成功的流程" style="shape=umlFrame;whiteSpace=wrap;html=1;fillColor=none;align=left;strokeColor=#FF0000;width=150;height=20;" vertex="1" parent="1">
+          <mxGeometry x="290" y="860" width="1880" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-20" value="静态检查成功" style="shape=umlFrame;whiteSpace=wrap;html=1;width=90;height=20;strokeColor=#FF0000;" vertex="1" parent="1">
+          <mxGeometry x="290" y="610" width="840" height="220" as="geometry" />
         </mxCell>
         <mxCell id="7baba1c4bc27f4b0-2" value="插件server" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
           <mxGeometry x="80" y="80" width="80" height="870" as="geometry" />
         </mxCell>
         <mxCell id="7baba1c4bc27f4b0-3" value="SCF" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="640" y="80" width="120" height="770" as="geometry" />
+          <mxGeometry x="640" y="80" width="120" height="1170" as="geometry" />
         </mxCell>
         <mxCell id="7baba1c4bc27f4b0-4" value="COS（CDN）" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="840" y="80" width="80" height="1000" as="geometry" />
+          <mxGeometry x="840" y="80" width="80" height="760" as="geometry" />
         </mxCell>
         <mxCell id="7baba1c4bc27f4b0-5" value="插件审核Server" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="280" y="80" width="80" height="840" as="geometry" />
+          <mxGeometry x="280" y="80" width="80" height="1040" as="geometry" />
         </mxCell>
         <mxCell id="7baba1c4bc27f4b0-6" value="插件管理server" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="1040" y="80" width="80" height="1000" as="geometry" />
+          <mxGeometry x="1040" y="80" width="80" height="1170" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-40" value="17. 创建插件云函数(需要考虑插件版本信息)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="7baba1c4bc27f4b0-6" target="7baba1c4bc27f4b0-3">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="30" y="1030" as="sourcePoint" />
+            <mxPoint x="110" y="1030" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-42" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeColor=#000000;fillColor=none;align=left;" vertex="1" parent="7baba1c4bc27f4b0-6">
+          <mxGeometry x="35" y="1060" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-43" value="18. 插件元信息变更、插件包上架" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;strokeColor=#000000;strokeWidth=1;" edge="1" target="ldka-5FNK_S4JEufgtKj-42" parent="7baba1c4bc27f4b0-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="40" y="1040" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="70" y="1040" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="HN2Nw33tpEwXZnYEOGIW-1" value="CLI" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
           <mxGeometry x="1440" y="80" width="80" height="580" as="geometry" />
@@ -40,7 +60,7 @@
           <mxGeometry x="-70" y="80" width="30" height="630" as="geometry" />
         </mxCell>
         <mxCell id="HN2Nw33tpEwXZnYEOGIW-5" value="开发者" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="1650" y="80" width="40" height="630" as="geometry" />
+          <mxGeometry x="1650" y="80" width="40" height="1170" as="geometry" />
         </mxCell>
         <mxCell id="HN2Nw33tpEwXZnYEOGIW-7" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="HN2Nw33tpEwXZnYEOGIW-5">
           <mxGeometry x="15" y="100" width="10" height="300" as="geometry" />
@@ -53,7 +73,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="HN2Nw33tpEwXZnYEOGIW-17" value="2.2. result&amp;nbsp;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=1;exitY=0.95;entryX=0.425;entryY=0.346;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" source="HN2Nw33tpEwXZnYEOGIW-15" parent="1" target="HN2Nw33tpEwXZnYEOGIW-5">
+        <mxCell id="HN2Nw33tpEwXZnYEOGIW-17" value="2.2. 调试成功" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=1;exitY=0.95;" edge="1" source="HN2Nw33tpEwXZnYEOGIW-15" parent="1" target="HN2Nw33tpEwXZnYEOGIW-5">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1545" y="297" as="targetPoint" />
           </mxGeometry>
@@ -69,7 +89,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="HN2Nw33tpEwXZnYEOGIW-28" value="插件管理前端" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
-          <mxGeometry x="1240" y="80" width="80" height="910" as="geometry" />
+          <mxGeometry x="1240" y="80" width="80" height="560" as="geometry" />
         </mxCell>
         <mxCell id="HN2Nw33tpEwXZnYEOGIW-35" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="1">
           <mxGeometry x="1275" y="440" width="10" height="170" as="geometry" />
@@ -196,8 +216,8 @@
             <mxPoint x="330" y="790" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-22" value="&lt;font color=&quot;#ff0000&quot;&gt;需要先做代码检查&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="350" y="570" width="100" height="40" as="geometry" />
+        <mxCell id="ldka-5FNK_S4JEufgtKj-22" value="&lt;font color=&quot;#ff0000&quot;&gt;需要先做代码检查&lt;/font&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="340" y="560" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-23" value="&lt;font color=&quot;#ff0000&quot;&gt;COS解压逻辑，需要考虑解压之后的目录名，跟现在下发给前端的插件包目录名需要对应上&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" vertex="1" parent="1">
           <mxGeometry x="670" y="460" width="170" height="50" as="geometry" />
@@ -206,6 +226,72 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="840" y="640" as="sourcePoint" />
             <mxPoint x="910" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-25" value="审核人员" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="80" width="50" height="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-28" value="审核前端" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1840" y="80" width="80" height="980" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-29" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeColor=#000000;fillColor=none;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2060" y="870" width="10" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-30" value="10. 插件审核" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" target="ldka-5FNK_S4JEufgtKj-28">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="2060" y="880" as="sourcePoint" />
+            <mxPoint x="2140" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-31" value="11.查询待审核的插件" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" target="7baba1c4bc27f4b0-5">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="1870" y="910" as="sourcePoint" />
+            <mxPoint x="1950" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-32" value="12. 展示插件信息" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1880" y="940" as="sourcePoint" />
+            <mxPoint x="2050" y="940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-34" value="13. 审核插件" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;strokeColor=#000000;strokeWidth=1;" edge="1" target="ldka-5FNK_S4JEufgtKj-41" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2070" y="965" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="2100" y="965" />
+            </Array>
+            <mxPoint x="2075" y="985" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-35" value="14. 审核通过" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" target="ldka-5FNK_S4JEufgtKj-28">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="2050" y="1010" as="sourcePoint" />
+            <mxPoint x="2130" y="1010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-37" value="15. 审核通过" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" target="7baba1c4bc27f4b0-5">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="1880.5" y="1030" as="sourcePoint" />
+            <mxPoint x="1710" y="1030" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-38" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeColor=#000000;fillColor=none;align=left;" vertex="1" parent="1">
+          <mxGeometry x="315" y="1030" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-39" value="16. 通知插件通过审核" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" target="7baba1c4bc27f4b0-6">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="325" y="1070" as="sourcePoint" />
+            <mxPoint x="405" y="1070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-41" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeColor=#000000;fillColor=none;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2070" y="965" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-44" value="19. 通知开发者插件包审核结果" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" target="HN2Nw33tpEwXZnYEOGIW-5">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="1090" y="1210" as="sourcePoint" />
+            <mxPoint x="1155" y="1210" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
