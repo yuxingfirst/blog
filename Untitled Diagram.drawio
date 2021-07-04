@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-04T09:52:18.327Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="znPldFxKwNVRqL9SSHxB" version="14.8.3" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-07-04T09:54:09.108Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="S2B5c-HHMyUjPZfHzcEo" version="14.8.3" type="github" pages="2">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
     <mxGraphModel dx="3229" dy="1163" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -302,6 +302,12 @@
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-48" value="插件商城" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="1">
           <mxGeometry x="80" y="80" width="80" height="1390" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-49" value="20. 浏览、安装插件" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-250" y="1370" as="sourcePoint" />
+            <mxPoint x="110" y="1370" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
