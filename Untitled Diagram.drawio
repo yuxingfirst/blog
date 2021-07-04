@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-04T10:38:01.893Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="fiKu-GO9I5U7yvlAicf6" version="14.8.3" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-07-04T10:40:37.821Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="nY8CV37wuN9k7EdqBn0w" version="14.8.3" type="github" pages="2">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
     <mxGraphModel dx="2929" dy="1129" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -8,7 +8,7 @@
           <mxGeometry x="-500" y="1690" width="1336" height="377" as="geometry" />
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-68" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;strokeColor=#FF0000;" vertex="1" parent="1">
-          <mxGeometry x="-500" y="1330" width="680" height="330" as="geometry" />
+          <mxGeometry x="-500" y="1330" width="1631" height="330" as="geometry" />
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-46" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;strokeColor=#FF0000;" vertex="1" parent="1">
           <mxGeometry x="270" y="495" width="1920" height="815" as="geometry" />
@@ -451,6 +451,9 @@
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-88" value="&lt;span style=&quot;font-size: 11px ; text-align: left&quot;&gt;&lt;font color=&quot;#ff0000&quot;&gt;查DB有无风险，需要评估下请求量&lt;/font&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#000000;dashed=1;dashPattern=1 1;strokeWidth=2;shadow=1;sketch=1;" vertex="1" parent="1">
           <mxGeometry x="130" y="1748" width="124" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-89" value="&lt;span style=&quot;font-size: 11px ; text-align: left&quot;&gt;&lt;font color=&quot;#ff0000&quot;&gt;授权的过程，有哪些参与者，交互过程中的入参、出参，调用涉及哪些模块&lt;/font&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#000000;dashed=1;dashPattern=1 1;strokeWidth=2;shadow=1;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="137" y="1515" width="154" height="76" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
