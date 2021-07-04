@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-04T10:36:13.889Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="bOD9KIj7hahtu7SUy0I_" version="14.8.3" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-07-04T10:37:23.538Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="WyFNWj166IFcA-XM3f_c" version="14.8.3" type="github" pages="2">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
     <mxGraphModel dx="2929" dy="1129" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -386,7 +386,7 @@
             <mxPoint x="-280" y="1720" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-72" value="30. 查DB(要评估请求量)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" target="ldka-5FNK_S4JEufgtKj-18">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-72" value="30. 查DB" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" target="ldka-5FNK_S4JEufgtKj-18">
           <mxGeometry width="80" relative="1" as="geometry">
             <mxPoint x="-280" y="1740" as="sourcePoint" />
             <mxPoint x="-200" y="1740" as="targetPoint" />
@@ -448,6 +448,9 @@
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-87" value="&lt;span style=&quot;font-size: 11px ; text-align: left&quot;&gt;&lt;font color=&quot;#ff0000&quot;&gt;1. 鉴权、安全逻辑&lt;br&gt;2. 插件安装逻辑&lt;/font&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#000000;dashed=1;dashPattern=1 1;strokeWidth=2;shadow=1;sketch=1;" vertex="1" parent="1">
           <mxGeometry x="-133" y="1793" width="124" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-88" value="&lt;span style=&quot;font-size: 11px ; text-align: left&quot;&gt;&lt;font color=&quot;#ff0000&quot;&gt;查DB有无风险，需要评估下请求量&lt;/font&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#000000;dashed=1;dashPattern=1 1;strokeWidth=2;shadow=1;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="1748" width="124" height="42" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
