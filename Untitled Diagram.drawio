@@ -1,13 +1,16 @@
-<mxfile host="app.diagrams.net" modified="2021-07-04T09:45:22.483Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="3OlnsKE5HjxlfCP_roLd" version="14.8.3" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-07-04T09:48:11.590Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="TfwGxDLV9StR176zty8y" version="14.8.3" type="github" pages="2">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
     <mxGraphModel dx="3229" dy="1163" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="ldka-5FNK_S4JEufgtKj-45" value="插件包审核成功的流程" style="shape=umlFrame;whiteSpace=wrap;html=1;fillColor=none;align=left;strokeColor=#FF0000;width=150;height=20;" vertex="1" parent="1">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-46" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;strokeColor=#FF0000;" vertex="1" parent="1">
+          <mxGeometry x="270" y="495" width="1920" height="815" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-45" value="插件包审核成功的流程" style="shape=umlFrame;whiteSpace=wrap;html=1;fillColor=none;align=left;width=150;height=20;strokeColor=#0000FF;" vertex="1" parent="1">
           <mxGeometry x="290" y="860" width="1880" height="390" as="geometry" />
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-20" value="静态检查成功" style="shape=umlFrame;whiteSpace=wrap;html=1;width=90;height=20;strokeColor=#FF0000;" vertex="1" parent="1">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-20" value="静态检查成功" style="shape=umlFrame;whiteSpace=wrap;html=1;width=90;height=20;strokeColor=#3333FF;" vertex="1" parent="1">
           <mxGeometry x="290" y="610" width="840" height="220" as="geometry" />
         </mxCell>
         <mxCell id="7baba1c4bc27f4b0-2" value="插件server" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
@@ -220,7 +223,7 @@
           <mxGeometry x="340" y="560" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-23" value="&lt;font color=&quot;#ff0000&quot;&gt;COS解压逻辑，需要考虑解压之后的目录名，跟现在下发给前端的插件包目录名需要对应上&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="670" y="460" width="170" height="50" as="geometry" />
+          <mxGeometry x="705" y="540" width="170" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-24" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ldka-5FNK_S4JEufgtKj-23">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -293,6 +296,9 @@
             <mxPoint x="1090" y="1210" as="sourcePoint" />
             <mxPoint x="1155" y="1210" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-47" value="&lt;font color=&quot;#ff0000&quot;&gt;从前端通知后台插件包上传成功开始，后续所有的处理流程是一个大的状态机&lt;/font&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="260" y="440" width="240" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
