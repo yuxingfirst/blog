@@ -1,12 +1,9 @@
-<mxfile host="app.diagrams.net" modified="2021-07-04T10:40:37.821Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="nY8CV37wuN9k7EdqBn0w" version="14.8.3" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-07-04T10:47:59.093Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="kR7S_VYTFIqAEIUG9sq-" version="14.8.3" type="github" pages="2">
   <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
-    <mxGraphModel dx="2929" dy="1129" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2929" dy="1129" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="ldka-5FNK_S4JEufgtKj-85" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;strokeColor=#FF0000;" vertex="1" parent="1">
-          <mxGeometry x="-500" y="1690" width="1336" height="377" as="geometry" />
-        </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-68" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;strokeColor=#FF0000;" vertex="1" parent="1">
           <mxGeometry x="-500" y="1330" width="1631" height="330" as="geometry" />
         </mxCell>
@@ -20,13 +17,13 @@
           <mxGeometry x="290" y="610" width="840" height="220" as="geometry" />
         </mxCell>
         <mxCell id="7baba1c4bc27f4b0-2" value="插件server" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="-320" y="80" width="80" height="1950" as="geometry" />
+          <mxGeometry x="-320" y="80" width="80" height="2112" as="geometry" />
         </mxCell>
         <mxCell id="7baba1c4bc27f4b0-3" value="SCF" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="640" y="80" width="80" height="1960" as="geometry" />
+          <mxGeometry x="640" y="80" width="80" height="2074" as="geometry" />
         </mxCell>
         <mxCell id="7baba1c4bc27f4b0-4" value="COS（CDN）" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="840" y="80" width="80" height="760" as="geometry" />
+          <mxGeometry x="840" y="80" width="80" height="1880" as="geometry" />
         </mxCell>
         <mxCell id="7baba1c4bc27f4b0-5" value="插件审核Server" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
           <mxGeometry x="280" y="80" width="80" height="1040" as="geometry" />
@@ -66,10 +63,10 @@
           <mxGeometry x="35" y="250" width="10" height="60" as="geometry" />
         </mxCell>
         <mxCell id="HN2Nw33tpEwXZnYEOGIW-4" value="用户" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="-470" y="80" width="30" height="1960" as="geometry" />
+          <mxGeometry x="-470" y="80" width="30" height="2120" as="geometry" />
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-74" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeColor=#000000;fillColor=none;align=left;" vertex="1" parent="HN2Nw33tpEwXZnYEOGIW-4">
-          <mxGeometry x="10" y="1640" width="10" height="280" as="geometry" />
+          <mxGeometry x="10" y="1640" width="10" height="450" as="geometry" />
         </mxCell>
         <mxCell id="HN2Nw33tpEwXZnYEOGIW-5" value="开发者" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;" vertex="1" parent="1">
           <mxGeometry x="1650" y="80" width="40" height="1170" as="geometry" />
@@ -398,62 +395,108 @@
             <mxPoint x="-450" y="1770" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-75" value="32. 使用插件(invoke)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" target="7baba1c4bc27f4b0-2">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-75" value="37. 使用插件(invoke)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
           <mxGeometry width="80" relative="1" as="geometry">
-            <mxPoint x="-450" y="1810" as="sourcePoint" />
-            <mxPoint x="-370" y="1810" as="targetPoint" />
+            <mxPoint x="-450" y="1980" as="sourcePoint" />
+            <mxPoint x="-290.5" y="1980" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-425" y="1980" />
+              <mxPoint x="-393" y="1980" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-76" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeColor=#000000;fillColor=none;align=left;" vertex="1" parent="1">
-          <mxGeometry x="-280" y="1840" width="10" height="40" as="geometry" />
+          <mxGeometry x="-284.5" y="2037" width="10" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-77" value="33. invoke前置逻辑" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;strokeColor=#000000;strokeWidth=1;" edge="1" target="ldka-5FNK_S4JEufgtKj-76" parent="1">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-77" value="38. invoke前置逻辑" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;strokeColor=#000000;strokeWidth=1;" edge="1" target="ldka-5FNK_S4JEufgtKj-76" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-275" y="1820" as="sourcePoint" />
+            <mxPoint x="-279.5" y="2017" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="-245" y="1820" />
+              <mxPoint x="-249.5" y="2017" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-78" value="34. SCF invoke" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" target="7baba1c4bc27f4b0-3">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-78" value="39. SCF invoke" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
           <mxGeometry width="80" relative="1" as="geometry">
-            <mxPoint x="-280" y="1900" as="sourcePoint" />
-            <mxPoint x="-200" y="1900" as="targetPoint" />
+            <mxPoint x="-284.5" y="2097" as="sourcePoint" />
+            <mxPoint x="675" y="2097" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-79" value="36. 云函数结果" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" target="7baba1c4bc27f4b0-2">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-79" value="41. 云函数结果" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;strokeColor=#000000;strokeWidth=1;exitX=0;exitY=1.013;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="ldka-5FNK_S4JEufgtKj-83">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="670" y="1980" as="sourcePoint" />
-            <mxPoint x="590" y="1980" as="targetPoint" />
+            <mxPoint x="665.5" y="2177" as="sourcePoint" />
+            <mxPoint x="-285" y="2154" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-81" value="35. 云函数逻辑" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-81" value="40. 云函数逻辑" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="690" y="1930" as="sourcePoint" />
+            <mxPoint x="688" y="2104" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="720" y="1930" />
-              <mxPoint x="720" y="1960" />
+              <mxPoint x="718" y="2104" />
+              <mxPoint x="718" y="2134" />
             </Array>
-            <mxPoint x="695" y="1960" as="targetPoint" />
+            <mxPoint x="693" y="2134" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-83" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;strokeColor=#000000;fillColor=none;align=left;" vertex="1" parent="1">
-          <mxGeometry x="670" y="1920" width="20" height="80" as="geometry" />
+          <mxGeometry x="675" y="2096" width="13" height="57" as="geometry" />
         </mxCell>
-        <mxCell id="ldka-5FNK_S4JEufgtKj-84" value="31. 返回列表数据" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+        <mxCell id="ldka-5FNK_S4JEufgtKj-84" value="42. 返回列表数据" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-280" y="2000" as="sourcePoint" />
-            <mxPoint x="-450" y="2000" as="targetPoint" />
+            <mxPoint x="-281" y="2170" as="sourcePoint" />
+            <mxPoint x="-451" y="2170" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-87" value="&lt;span style=&quot;font-size: 11px ; text-align: left&quot;&gt;&lt;font color=&quot;#ff0000&quot;&gt;1. 鉴权、安全逻辑&lt;br&gt;2. 插件安装逻辑&lt;/font&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#000000;dashed=1;dashPattern=1 1;strokeWidth=2;shadow=1;sketch=1;" vertex="1" parent="1">
-          <mxGeometry x="-133" y="1793" width="124" height="42" as="geometry" />
+          <mxGeometry x="-137.5" y="1990" width="124" height="42" as="geometry" />
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-88" value="&lt;span style=&quot;font-size: 11px ; text-align: left&quot;&gt;&lt;font color=&quot;#ff0000&quot;&gt;查DB有无风险，需要评估下请求量&lt;/font&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#000000;dashed=1;dashPattern=1 1;strokeWidth=2;shadow=1;sketch=1;" vertex="1" parent="1">
           <mxGeometry x="130" y="1748" width="124" height="42" as="geometry" />
         </mxCell>
         <mxCell id="ldka-5FNK_S4JEufgtKj-89" value="&lt;span style=&quot;font-size: 11px ; text-align: left&quot;&gt;&lt;font color=&quot;#ff0000&quot;&gt;授权的过程，有哪些参与者，交互过程中的入参、出参，调用涉及哪些模块&lt;/font&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeColor=#000000;dashed=1;dashPattern=1 1;strokeWidth=2;shadow=1;sketch=1;" vertex="1" parent="1">
           <mxGeometry x="137" y="1515" width="154" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-91" value="32. 打开插件" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-450" y="1800" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="-420" y="1800" />
+              <mxPoint x="-420" y="1830" />
+            </Array>
+            <mxPoint x="-445" y="1830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-92" value="33. 获取html页" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" target="7baba1c4bc27f4b0-2">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-450" y="1860" as="sourcePoint" />
+            <mxPoint x="-290.5" y="1860" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-425" y="1860" />
+              <mxPoint x="-393" y="1860" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-93" value="34. 下载html内容" style="html=1;verticalAlign=bottom;endArrow=block;strokeWidth=1;" edge="1" parent="1" target="7baba1c4bc27f4b0-4">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-280" y="1870" as="sourcePoint" />
+            <mxPoint x="-200" y="1870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-94" value="35. 返回html内容" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-280" y="1893" as="sourcePoint" />
+            <mxPoint x="-450" y="1893" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ldka-5FNK_S4JEufgtKj-95" value="36. 前端SDK逻辑" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;entryX=1;entryY=0;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-450" y="1920" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="-420" y="1920" />
+              <mxPoint x="-420" y="1950" />
+            </Array>
+            <mxPoint x="-445" y="1950" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
